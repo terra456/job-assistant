@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Wix_Madefor_Display, Wix_Madefor_Text } from "next/font/google";
 import "./globals.css";
+import Header from "@/ui/header/header";
+import Footer from "@/ui/footer/footer";
 
 const wixDisplay = Wix_Madefor_Display({
   variable: "--font-wix-display",
@@ -25,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${wixDisplay.variable} ${wixText.variable}`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,14 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import Header from "@/ui/header/header";
 import styles from "./page.module.css";
 import NavBar from "@/ui/nav-bar/nav-bar";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <Header />
       <main className={styles.main}>
-        Main
         <div className={styles.promo}>
           <img
             src="/sophi.png"
@@ -24,9 +20,5 @@ export default function Home() {
           cards
         </div>
       </main>
-      <footer className={styles.footer}>
-        Footer
-      </footer>
-    </div>
   );
 }

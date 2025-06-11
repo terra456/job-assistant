@@ -1,0 +1,28 @@
+.header {
+  position: sticky;
+  height: 96px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  position: absolute;
+  top: 96px;
+  right: 0;
+}
+
+.nav {
+
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

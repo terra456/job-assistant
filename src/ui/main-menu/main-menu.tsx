@@ -1,37 +1,38 @@
-import Link from 'next/link';
+import LinkMenuImg from '../components/link-menu-img';
+import styles from "./style.module.scss";
 
 export default function MainMenu() {
   return (
-      <nav>
-        <ul>
+      <nav className={styles.menu}>
+        <ul className={styles.list}>
           <li>
-            <Link href="/python">Вакансии / Cтажировки</Link>
+            <LinkMenuImg text={'Вакансии и стажировки'} href={'vacancies-and-internships'} imgClass={''} />
           </li>
           <li>
-            <Link href="/java">Тестовые задания</Link>
+          <LinkMenuImg text={'Тестовые задания<'} href={''} imgClass={''} />
           </li>
           <li>
-            <Link href="/javascript">IT-мероприятия</Link>
+          <LinkMenuImg text={'IT-мероприятия'} href={''} imgClass={''} />
           </li>
           <li>
-            <Link href="/data-science">Контакты рекрутеров</Link>
+            <LinkMenuImg text={'Контакты рекрутеров'} href={''} imgClass={''} />
           </li>
           <li>
-            <Link href="/qa">Резюме соискателей</Link>
+            <LinkMenuImg text={'Резюме соискателей'} href={''} imgClass={''} />
           </li>
         </ul>
-        <ul>
+        <ul className={styles.list}>
           <li>
-            <Link href="/c">Необходимые навыки</Link>
+            <LinkMenuImg text={'Необходимые навыки'} href={''} imgClass={''} />
           </li>
           <li>
-            <Link href="/c">Собеседования</Link>
+            <LinkMenuImg text={'Собеседования'} href={''} imgClass={''} />
           </li>
           <li>
-            <Link href="/c">Пет-проекты</Link>
+            <LinkMenuImg text={'Пет-проекты'} href={''} imgClass={''} />
           </li>
           <li>
-            <Link href="/c">ИИ инструменты</Link>
+            <LinkMenuImg text={'ИИ инструменты'} href={''} imgClass={''} />
           </li>
         </ul>
       </nav>
