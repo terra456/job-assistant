@@ -14,10 +14,6 @@
   right: 0;
 }
 
-.nav {
-
-}
-
 .list {
   display: flex;
   flex-direction: row;
@@ -25,4 +21,8 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  & > li {
+    height: 100%;
+  }
 }

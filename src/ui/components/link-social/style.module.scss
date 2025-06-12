@@ -1,0 +1,27 @@
+.link {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    mask-size: 30px 30px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: all 1000;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    &::before {
+      background: var(--gradient-tertiary);
+    }
+  }
+}

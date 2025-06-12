@@ -1,19 +1,44 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
   font-family: var(--font-wix-display);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promo {
+  max-width: 436px;
+  margin: 100px auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cards_wrapper {
+  max-width: 1020px;
+}
+
+.head1 {
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.head2 {
+  color: rgb(65, 66, 70);
+  font-family: var(--wix-display);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+  text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
