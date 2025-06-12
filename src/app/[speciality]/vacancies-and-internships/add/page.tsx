@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
 
 export default function Page() {
-  return <p>Добавить вакансию</p>;
+  return <p className={styles.p}>Добавить вакансию</p>;
 }

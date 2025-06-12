@@ -2,6 +2,7 @@
 .link:hover,
 .link:visited,
 .link:focus {
+  position: relative;
   padding: 0px;
   padding-left: 21px;
   box-sizing: border-box;
@@ -15,11 +16,15 @@
   text-align: left;
 
   &::before {
-    content: url(/glob.svg);
-    size: 15px 15px;
-    background-image: url(/glob.svg);
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    display: block;
     background-size: 15px 15px;
-    background-position: left;
+    background-position: top left;
     background-repeat: no-repeat;
   }
 }
