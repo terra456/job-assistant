@@ -8,7 +8,7 @@ export default function MainMenu() {
         <li>
           <LinkMenuImg
             text={"Вакансии и стажировки"}
-            href={"vacancies-and-internships"}
+            href={"/vacancies-and-internships"}
             imgClass={"briefcase"}
           />
         </li>
@@ -18,21 +18,21 @@ export default function MainMenu() {
         <li>
           <LinkMenuImg
             text={"IT-мероприятия"}
-            href={""}
+            href={"/"}
             imgClass={"calendar-week"}
           />
         </li>
         <li>
           <LinkMenuImg
             text={"Контакты рекрутеров"}
-            href={""}
+            href={"/"}
             imgClass={"message"}
           />
         </li>
         <li>
           <LinkMenuImg
             text={"Резюме соискателей"}
-            href={""}
+            href={"/"}
             imgClass={"frame"}
           />
         </li>
@@ -41,28 +41,28 @@ export default function MainMenu() {
         <li>
           <LinkMenuImg
             text={"Необходимые навыки"}
-            href={""}
+            href={"/"}
             imgClass={"stack"}
           />
         </li>
         <li>
           <LinkMenuImg
             text={"Собеседования"}
-            href={""}
+            href={"/questions"}
             imgClass={"microphone"}
           />
         </li>
         <li>
           <LinkMenuImg
             text={"Пет-проекты"}
-            href={""}
+            href={"/"}
             imgClass={"code-asterisk"}
           />
         </li>
         <li>
           <LinkMenuImg
             text={"ИИ инструменты"}
-            href={""}
+            href={"/"}
             imgClass={"sparkles"}
           />
         </li>
