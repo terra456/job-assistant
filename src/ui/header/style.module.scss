@@ -8,10 +8,14 @@
   justify-content: center;
 }
 
-.popup {
-  position: absolute;
-  top: 96px;
-  right: 0;
+.nav {
+  position: relative;
+  width: 482px;
+  height: 56px;
+  border-radius: 18px;
+  box-shadow: 0px 0px 12px 0px rgba(24, 44, 194, 0.05);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .list {

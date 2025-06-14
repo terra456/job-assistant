@@ -1,7 +1,8 @@
+"use server";
 import LinkMenuImg from "../components/link-menu-img";
 import styles from "./style.module.scss";
 
-export default function MainMenu() {
+export default async function MainMenu() {
   return (
     <nav className={styles.menu}>
       <ul className={styles.list}>

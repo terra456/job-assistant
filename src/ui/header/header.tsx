@@ -1,12 +1,13 @@
+"use server";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import NavBar from "../nav-bar/nav-bar";
 import MainMenu from "../main-menu/main-menu";
 import styles from "./style.module.scss";
-import BtnMenuImg from "../components/btn-menu-img";
 import LinkMenuImg from "../components/link-menu-img";
+import PopupMenu from "../popup-menu";
 
-export default function Header() {
+export default async function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -16,18 +17,17 @@ export default function Header() {
               <img src="/codereview.svg" alt="codereview" />
             </Link>
           </li>
-          <li>
-            <BtnMenuImg text="Специализация" imgClass={"menu"} />
+          <li className={styles.for_popup}>
+            <PopupMenu>
+              <NavBar />
+              <MainMenu />
+            </PopupMenu>
           </li>
           <li>
             <LinkMenuImg text="Войти" imgClass={"profile"} href={"login"} />
           </li>
         </ul>
       </nav>
-      <div className={styles.popup}>
-        <NavBar />
-        <MainMenu />
-      </div>
     </header>
   );
 }
