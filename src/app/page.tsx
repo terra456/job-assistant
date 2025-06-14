@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import HomeMenu from "@/ui/home-menu copy/home-menu";
+import HomeMenu from "@/ui/home-menu/home-menu";
 import styles from "./page.module.css";
 import NavBar from "@/ui/nav-bar/nav-bar";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
       <div className={styles.promo}>
         <img src="/sophi.png" alt="Sophi photo" />
         <h1 className={styles.head1}>Твой Ассистент по&nbsp;поиску работы</h1>
@@ -20,6 +20,6 @@ export default function Home() {
       <div className={styles.cards_wrapper}>
         <HomeMenu />
       </div>
-    </main>
+    </div>
   );
 }

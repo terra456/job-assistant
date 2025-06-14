@@ -8,7 +8,7 @@ export default function HomeMenu() {
     <div className={styles.wrapper}>
       <HomeCard
         text={"Вакансии и стажировки"}
-        href={"vacancies-and-internships"}
+        href={"./vacancies-and-internships"}
         imgClass={"briefcase"}
         desc={
           "Актуальные junior-вакансии и стажировки с hh.ru, Habr Career, LinkedIn, Telegram и других платформ"
@@ -32,7 +32,7 @@ export default function HomeMenu() {
       />
       <HomeCard
         text={"Собеседования"}
-        href={""}
+        href={"/questions"}
         imgClass={"microphone"}
         desc={
           "Реальные вопросы с интервью, сгруппированные по стеку и уровню сложности — с пояснениями и примерами ответов"

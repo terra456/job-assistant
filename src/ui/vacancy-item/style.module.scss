@@ -1,0 +1,66 @@
+.card {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  background: rgb(246, 246, 246);
+}
+
+.head {
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.info {
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: row;
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.name {
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.locate {
+  color: rgb(99, 100, 105);
+  font-family: Wix Madefor Display;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.date {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  align-self: flex-end;
+  color: rgb(134, 136, 142);
+  font-family: var(--wix-display);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}

@@ -1,0 +1,1 @@
+export const vacancyPerPage = 8;
