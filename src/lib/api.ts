@@ -1,4 +1,4 @@
-import { Question, QuestionSearchParams, Vacancy, VacancySearchParams } from "./definitions";
+import { LoginForm, LoginResponse, Question, QuestionSearchParams, User, Vacancy, VacancySearchParams } from "./definitions";
 
 export async function getAllVacancies(params: VacancySearchParams): Promise<Vacancy[]> {
   const getParams = new URLSearchParams(params).toString();
@@ -51,5 +51,31 @@ export async function getQuestion(id: number): Promise<Question> {
   });
   const json = await response.json();
   console.log(id, response);
+  return json;
+}
+
+export async function login(data: LoginForm): Promise<LoginResponse> {
+  const response = await fetch(`${process.env.BACKEND_ENDPOINT}/auth/token`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: data,
+  });
+  const json = await response.json();
+  console.log(json);
+  return json;
+}
+
+export async function getUser(token: string): Promise<User> {
+  const response = await fetch(`${process.env.BACKEND_ENDPOINT}/auth/users/me/`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+  const json = await response.json();
+  console.log(json);
   return json;
 }

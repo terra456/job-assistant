@@ -47,3 +47,19 @@ export interface QuestionSearchParams {
   sort_by?: string;
   order?: 'asc'|'desc';
 }
+
+export interface LoginForm extends FormData {
+  username: string,
+  password: string,
+}
+
+export interface User {
+  username: string,
+  password: string,
+  is_superuser: boolean,
+}
+
+export interface LoginResponse {
+  access_token: string,
+  token_type: string,
+}
