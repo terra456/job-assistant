@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LinkMenuImg from "../link-menu-img";
 import { auth } from "@/auth";
 
@@ -7,11 +8,7 @@ export default async function LoginLink() {
   return (
     <>
       {!session?.user ? (
-        <LinkMenuImg
-          text="Войти"
-          imgClass={"profile"}
-          href={"/api/auth/signin"}
-        />
+        <Link href="/auth/login">Войти</Link>
       ) : (
         <LinkMenuImg
           text="Выйти"

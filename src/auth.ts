@@ -4,11 +4,13 @@ import { loginUserGetToken } from "./lib/api"
  
 export const { auth, handlers, signIn, signOut } = NextAuth({
   providers: [Credentials({
+    name: "credentials",
     credentials: {
       username: { label: "Email", type: "text", placeholder: "johndoe@gmail.com",},
       password: { label: "Password", type: "password", placeholder: "*****", }
     },
     authorize: async (credentials) => {
+      console.log("authorize", credentials);
       let user = null;
       if (typeof credentials.username ==="string" && typeof credentials.password === "string") {
         const userData = {
@@ -27,5 +29,10 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       }
     }
   })],
-  session: { strategy: "jwt" }
+  session: { strategy: "jwt" },
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      return baseUrl
+    },
+  }
 })
