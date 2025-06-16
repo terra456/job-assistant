@@ -1,5 +1,8 @@
 .backdrop {
   position: absolute;
+  box-sizing: unset;
+  margin: unset;
+  padding: unset;
   top: 0;
   left: 0;
   right: 0;
@@ -12,14 +15,15 @@
 }
 
 .modal {
-  width: 80%;
-  max-width: 500px;
-  height: auto;
-  max-height: 500px;
+  box-sizing: unset;
+  margin: auto;
+  padding: unset;
+  width: 800px;
+  max-height: 90vh;
+  min-height: 522px;
   border: none;
   border-radius: 12px;
   background-color: white;
-  padding: 20px;
   position: relative;
   display: flex;
   justify-content: center;

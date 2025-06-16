@@ -30,7 +30,7 @@ export default function RootLayout({
         <Header />
         <main className="main">{children}</main>
         <Footer />
-        <div id="modal-root" />
+        <div id="modal-root" className="modal-root" />
       </body>
     </html>
   );

@@ -1,0 +1,32 @@
+.container {
+  min-width: 420px;
+  height: 522px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+}
+
+.desc {
+  font-family: var(--wix-text);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
