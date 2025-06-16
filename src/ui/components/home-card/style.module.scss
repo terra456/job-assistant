@@ -1,0 +1,53 @@
+.link,
+.link:hover,
+.link:visited,
+.link:focus {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--grey-100-f6);
+  border-radius: 6px;
+  color: var(--grey-700-00);
+  text-decoration: none;
+}
+
+.head {
+  position: absolute;
+  bottom: 20px;
+  color: var(--grey-700-25);
+  font-family: var(--wix-text);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.desc {
+  position: relative;
+  padding: 0;
+  padding-top: 70px;
+  margin: 0;
+  color: var(--grey-700-25);
+  font-family: var(--wix-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: 20px 20px;
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+}

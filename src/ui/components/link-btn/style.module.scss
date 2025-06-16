@@ -1,0 +1,19 @@
+.link {
+  padding: 17px 20px 17px 20px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  background: var(--gradient-primary);
+  color: var(--grey-100-ff);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  font-family: var(--wix-text);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  &:hover {
+    background: var(--gradient-primary-hover);
+  }
+}

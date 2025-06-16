@@ -1,0 +1,33 @@
+.backdrop {
+  position: absolute;
+  box-sizing: unset;
+  margin: unset;
+  padding: unset;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  box-sizing: unset;
+  margin: auto;
+  padding: unset;
+  width: 800px;
+  max-height: 90vh;
+  min-height: 522px;
+  border: none;
+  border-radius: 12px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: 500;
+}

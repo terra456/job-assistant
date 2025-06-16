@@ -1,0 +1,198 @@
+:root {
+  --primary-100: #ecf0ff;
+  --primary-200: #c7d4ff;
+  --primary-300: #8cabfe;
+  --primary-400: #3884fe;
+  --primary-500: #0560c9;
+  --primary-600: #024089;
+  --primary-700: #01224f;
+  --secondary-100: #f7edfe;
+  --secondary-200: #e6c4fd;
+  --secondary-300: #d48dfc;
+  --secondary-400: #c546fa;
+  --secondary-500: #9b16c9;
+  --secondary-600: #680b88;
+  --secondary-700: #39034c;
+  --tertiary-100: #ffe5c5;
+  --tertiary-200: #f5b61a;
+  --tertiary-300: #c59113;
+  --tertiary-400: #976e0b;
+  --tertiary-500: #6b4d05;
+  --tertiary-600: #422f02;
+  --tertiary-700: #1d1200;
+  --quaternary-100: #ffecec;
+  --quaternary-200: #ffc0c0;
+  --quaternary-300: #ff8383;
+  --quaternary-400: #ff2323;
+  --quaternary-500: #c20000;
+  --quaternary-600: #820000;
+  --quaternary-700: #480000;
+  --quinary-100: #93f90f;
+  --quinary-200: #78cd0a;
+  --quinary-300: #5ea306;
+  --quinary-400: #457b03;
+  --quinary-500: #2e5501;
+  --quinary-600: #193101;
+  --quinary-700: #071400;
+  --grey-100-ff: #ffffff;
+  --grey-100-f6: #f6f6f6;
+  --grey-100-f4: #f4f4f4;
+  --grey-100-f1: #f0f1f1;
+  --grey-200: #d4d5d7;
+  --grey-300: #acaeb2;
+  --grey-400: #86888e;
+  --grey-500: #636469;
+  --grey-600: #414246;
+  --grey-700-25: #232325;
+  --grey-700-00: #000000;
+  --gradient-primary: linear-gradient(
+    41.99deg,
+    rgb(32, 147, 254) 5.317%,
+    rgba(194, 23, 254, 0.9) 100.207%
+  );
+  --gradient-primary-hover: linear-gradient(
+    41.99deg,
+    rgba(32, 147, 254, 0.8) 2.691%,
+    rgba(194, 23, 254, 0.72) 95.095%
+  );
+  --gradient-secondary:
+    linear-gradient(
+      90deg,
+      rgba(244, 184, 184, 0.4),
+      rgba(234, 214, 181, 0.4) 22.596%,
+      rgba(227, 234, 179, 0.4) 44.712%,
+      rgba(197, 241, 208, 0.4) 100%
+    ),
+    rgb(255, 255, 255);
+  --gradient-tertiary: linear-gradient(
+    90deg,
+    rgb(226, 83, 119),
+    rgb(238, 185, 2) 49.038%,
+    rgb(98, 180, 255) 100%
+  );
+  --gradient-button-hover:
+    linear-gradient(
+      75.96deg,
+      rgba(244, 184, 184, 0.6) 5.134%,
+      rgba(227, 179, 234, 0.6) 35.922%,
+      rgba(197, 201, 241, 0.6) 73.992%
+    ),
+    rgb(255, 255, 255);
+  --gradient-button:
+    linear-gradient(
+      75.96deg,
+      rgba(244, 184, 184, 0.4) 5.134%,
+      rgba(227, 179, 234, 0.4) 35.922%,
+      rgba(197, 201, 241, 0.4) 73.992%
+    ),
+    rgb(255, 255, 255);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background-image: url(/bg-gradient.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:not(.modal-root) {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1022px;
+}
+
+.briefcase::before {
+  background-image: url(/img/briefcase.svg);
+}
+
+.code::before {
+  background-image: url(/img/code.svg);
+}
+
+.calendar-week::before {
+  background-image: url(/img/calendar-week.svg);
+}
+
+.message::before {
+  background-image: url(/img/message.svg);
+}
+
+.frame::before {
+  background-image: url(/img/frame.svg);
+}
+
+.stack::before {
+  background-image: url(/img/stack.svg);
+}
+
+.microphone::before {
+  background-image: url(/img/microphone.svg);
+}
+
+.code-asterisk::before {
+  background-image: url(/img/code-asterisk.svg);
+}
+
+.sparkles::before {
+  background-image: url(/img/sparkles.svg);
+}
+
+.profile::before {
+  background-image: url(/img/profile.svg);
+}
+
+.menu::before {
+  background-image: url(/img/menu.svg);
+}
+
+.tg-img::before {
+  background-image: url(/img/tg.svg);
+}
+.hh-img::before {
+  background-image: url(/img/hh.svg);
+}
+
+.telegram::before {
+  mask-image: url(/img/telegram_.svg);
+}
+
+.youtube::before {
+  mask-image: url(/img/youtube_.svg);
+}
+
+.linkedin::before {
+  mask-image: url(/img/linkedin_.svg);
+}
