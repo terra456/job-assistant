@@ -112,7 +112,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+*:not(.modal-root) {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -176,6 +176,13 @@ li {
 
 .menu::before {
   background-image: url(/img/menu.svg);
+}
+
+.tg-img::before {
+  background-image: url(/img/tg.svg);
+}
+.hh-img::before {
+  background-image: url(/img/hh.svg);
 }
 
 .telegram::before {

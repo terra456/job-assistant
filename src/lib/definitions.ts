@@ -48,12 +48,18 @@ export interface QuestionSearchParams {
   order?: 'asc'|'desc';
 }
 
-export interface LoginForm extends FormData {
+export interface LoginForm {
   username: string,
   password: string,
 }
 
 export interface User {
+  username: string,
+  password: string,
+  apiToken: string,
+}
+
+export interface UserFromDB {
   username: string,
   password: string,
   is_superuser: boolean,

@@ -1,0 +1,42 @@
+.btn {
+  width: 100%;
+  padding: 17px 20px 17px 20px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  background: var(--gradient-primary);
+  color: var(--grey-100-ff);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--wix-text);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+
+  border: none;
+  overflow: visible;
+  outline: none;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  appearance: none;
+  -webkit-appearance: none;
+
+  /* Remove excess padding and border in Firefox 4+ */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:hover {
+    background: var(--gradient-primary-hover);
+  }
+
+  &:disabled {
+    background: var(--gradient-primary-hover);
+  }
+}
