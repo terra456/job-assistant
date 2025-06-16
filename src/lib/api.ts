@@ -1,9 +1,10 @@
+import { BACKEND_ENDPOINT } from "./constants";
 import { LoginForm, Question, QuestionSearchParams, User, Vacancy, VacancySearchParams } from "./definitions";
 
 export async function getAllVacancies(params: VacancySearchParams): Promise<Vacancy[]> {
   const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString()
   console.log(getParams);
-  const response = await fetch(`${process.env.BACKEND_ENDPOINT}/vacancies?${getParams}`, {
+  const response = await fetch(`${BACKEND_ENDPOINT}/vacancies?${getParams}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -15,7 +16,7 @@ export async function getAllVacancies(params: VacancySearchParams): Promise<Vaca
 }
 
 export async function getVacancie(id: number): Promise<Vacancy> {
-  const response = await fetch(`${process.env.BACKEND_ENDPOINT}/vacancies/${id}`, {
+  const response = await fetch(`${BACKEND_ENDPOINT}/vacancies/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -30,7 +31,7 @@ export async function getVacancie(id: number): Promise<Vacancy> {
 export async function getAllQuestions(params: QuestionSearchParams): Promise<Question[]> {
   const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString();
   console.log(getParams);
-  const response = await fetch(`${process.env.BACKEND_ENDPOINT}/questions?${getParams}`, {
+  const response = await fetch(`${BACKEND_ENDPOINT}/questions?${getParams}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -42,7 +43,7 @@ export async function getAllQuestions(params: QuestionSearchParams): Promise<Que
 }
 
 export async function getQuestion(id: number): Promise<Question> {
-  const response = await fetch(`${process.env.BACKEND_ENDPOINT}/questions/${id}`, {
+  const response = await fetch(`${BACKEND_ENDPOINT}/questions/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -55,7 +56,7 @@ export async function getQuestion(id: number): Promise<Question> {
 }
 
 export async function loginUserGetToken(data: LoginForm): Promise<User | null> {
-  const response = await fetch(`${process.env.BACKEND_ENDPOINT}/auth/token`, {
+  const response = await fetch(`${BACKEND_ENDPOINT}/auth/token`, {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -71,7 +72,7 @@ export async function loginUserGetToken(data: LoginForm): Promise<User | null> {
 }
 
 export async function getUserByToken(token: string): Promise<User> {
-  const response = await fetch(`${process.env.BACKEND_ENDPOINT}/auth/users/me/`, {
+  const response = await fetch(`${BACKEND_ENDPOINT}/auth/users/me/`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

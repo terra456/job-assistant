@@ -1,3 +1,5 @@
+export const BACKEND_ENDPOINT = "http://jobs.yourcodereview.com:8005";
+
 export const vacancyPerPage = 8;
 
 export const stack = new Map([
