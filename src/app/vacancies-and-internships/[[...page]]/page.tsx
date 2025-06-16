@@ -4,28 +4,32 @@ import { vacancyPerPage } from "@/lib/constants";
 import { VacancySearchParams } from "@/lib/definitions";
 import VacancyItem from "@/ui/vacancy-item";
 import styles from "./page.module.scss";
+import VacancyFilters from "@/ui/vacancy-filters";
 
 export default async function Vacancies({
   params,
+  searchParams,
 }: {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ page?: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const serchParams: VacancySearchParams = { limit: vacancyPerPage };
-  const { slug } = await params;
-  slug?.forEach((el) => {
-    if (el.includes("page")) {
-      serchParams.skip = (Number(el.replace("page-", "")) - 1) * vacancyPerPage;
-    } else {
-      serchParams.speciality = el;
-    }
-  });
-  const vacancies = await getAllVacancies(serchParams);
+  const { page } = await params;
+  const search = await searchParams;
+
+  const reqSerchParams: VacancySearchParams = {
+    limit: vacancyPerPage,
+    skip: (Number(page) - 1) * vacancyPerPage || 0,
+    ...search,
+  };
+  console.log("reqSerchParams", search);
+
+  const vacancies = await getAllVacancies(reqSerchParams);
   console.log(vacancies);
   return (
     <>
       <h1>
-        {serchParams.speciality
-          ? `Вакансии по Data Science${serchParams.speciality}`
+        {reqSerchParams.speciality
+          ? `Вакансии по ${reqSerchParams.speciality}`
           : "Все вакансии"}
       </h1>
       <p>
@@ -33,7 +37,9 @@ export default async function Vacancies({
         источников: hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие
         другие
       </p>
-      <div>Filters</div>
+      <div>
+        <VacancyFilters />
+      </div>
       <div className={styles.cards}>
         {vacancies.map((el) => (
           <VacancyItem key={el.id} vacancie={el} />

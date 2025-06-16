@@ -10,3 +10,9 @@ export const stack = new Map([
   ["qa", "QA"],
   ["c", "C#"],
 ]);
+
+export const source = new Map([
+  ["linkedin", "LinkedIn"],
+  ["hhru", "Hh.ru"],
+  ["indeed", "Indeed"],
+]);
