@@ -2,7 +2,6 @@
 import { getAllQuestions } from "@/lib/api";
 import { QuestionSearchParams } from "@/lib/definitions";
 import QuestionItem from "@/ui/question-item";
-import styles from "./page.module.scss";
 
 export default async function Page({
   params,

@@ -32,6 +32,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   session: { strategy: "jwt" },
   callbacks: {
     async redirect({ url, baseUrl }) {
+      console.log("redirect", url, baseUrl);
       return baseUrl
     },
   }

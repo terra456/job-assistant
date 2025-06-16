@@ -1,5 +1,4 @@
 import { getQuestion } from "@/lib/api";
-import styles from "./page.module.css";
 
 export default async function Page({
   params,
