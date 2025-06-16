@@ -6,6 +6,7 @@ import MainMenu from "../main-menu/main-menu";
 import styles from "./style.module.scss";
 import LinkMenuImg from "../components/link-menu-img";
 import PopupMenu from "../popup-menu";
+import LoginLink from "../components/login-link";
 
 export default async function Header() {
   return (
@@ -24,7 +25,7 @@ export default async function Header() {
             </PopupMenu>
           </li>
           <li>
-            <LinkMenuImg text="Войти" imgClass={"profile"} href={"login"} />
+            <LoginLink />
           </li>
         </ul>
       </nav>
