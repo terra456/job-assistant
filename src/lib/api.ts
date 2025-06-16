@@ -1,7 +1,7 @@
 import { LoginForm, Question, QuestionSearchParams, User, Vacancy, VacancySearchParams } from "./definitions";
 
 export async function getAllVacancies(params: VacancySearchParams): Promise<Vacancy[]> {
-  const getParams = new URLSearchParams(params).toString();
+  const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString()
   console.log(getParams);
   const response = await fetch(`${process.env.BACKEND_ENDPOINT}/vacancies?${getParams}`, {
     method: "GET",
@@ -28,7 +28,7 @@ export async function getVacancie(id: number): Promise<Vacancy> {
 }
 
 export async function getAllQuestions(params: QuestionSearchParams): Promise<Question[]> {
-  const getParams = new URLSearchParams(params).toString();
+  const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString();
   console.log(getParams);
   const response = await fetch(`${process.env.BACKEND_ENDPOINT}/questions?${getParams}`, {
     method: "GET",
@@ -60,7 +60,7 @@ export async function loginUserGetToken(data: LoginForm): Promise<User | null> {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: new URLSearchParams(data),
+    body: new URLSearchParams(Object.fromEntries(Object.entries(data).map(([k, v]) => [k, String(v)]))),
   });
   const json = await response.json();
   console.log(json);
