@@ -11,19 +11,22 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     },
     authorize: async (credentials) => {
       console.log("authorize", credentials);
-      let user = null;
-      if (typeof credentials.username ==="string" && typeof credentials.password === "string") {
+      if (typeof credentials.username === "string" && typeof credentials.password === "string") {
         const userData = {
           username: credentials.username,
           password: credentials.password,
         }
-        user = await loginUserGetToken(userData);
-        if (!user) {
-          // No user found, so this is their first attempt to login
-          // Optionally, this is also the place you could do a user registration
+        const apiUser = await loginUserGetToken(userData);
+        if (!apiUser) {
           throw new Error("Invalid credentials.")
         }
-        return user;
+        // Map your user object to the NextAuth User shape
+        const nextAuthUser = {
+          id: apiUser.username?.toString() ?? apiUser.username ?? "unknown",
+          name: apiUser.username ?? apiUser.username ??  "",
+          apiToken: apiUser.apiToken ?? "",
+        };
+        return nextAuthUser;
       } else {
         return null
       }
