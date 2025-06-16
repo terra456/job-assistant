@@ -1,4 +1,4 @@
-import { LoginForm, LoginResponse, Question, QuestionSearchParams, User, UserResponse, Vacancy, VacancySearchParams } from "./definitions";
+import { LoginForm, Question, QuestionSearchParams, User, Vacancy, VacancySearchParams } from "./definitions";
 
 export async function getAllVacancies(params: VacancySearchParams): Promise<Vacancy[]> {
   const getParams = new URLSearchParams(params).toString();

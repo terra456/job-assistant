@@ -4,7 +4,6 @@ import Link from "next/link";
 import NavBar from "../nav-bar/nav-bar";
 import MainMenu from "../main-menu/main-menu";
 import styles from "./style.module.scss";
-import LinkMenuImg from "../components/link-menu-img";
 import PopupMenu from "../popup-menu";
 import LoginLink from "../components/login-link";
 

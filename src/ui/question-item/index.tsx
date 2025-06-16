@@ -1,5 +1,4 @@
 import Link from "next/link";
-import styles from "./style.module.scss";
 import { Question } from "@/lib/definitions";
 
 export default function QuestionItem({ question }: { question: Question }) {
