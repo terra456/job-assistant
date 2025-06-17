@@ -6,6 +6,7 @@ import MainMenu from "../main-menu/main-menu";
 import styles from "./style.module.scss";
 import PopupMenu from "../popup-menu";
 import LoginLink from "../components/login-link";
+import { Suspense } from "react";
 
 export default async function Header() {
   return (
@@ -18,10 +19,12 @@ export default async function Header() {
             </Link>
           </li>
           <li className={styles.for_popup}>
-            <PopupMenu>
-              <NavBar />
-              <MainMenu />
-            </PopupMenu>
+            <Suspense>
+              <PopupMenu>
+                <NavBar />
+                <MainMenu />
+              </PopupMenu>
+            </Suspense>
           </li>
           <li>
             <LoginLink />

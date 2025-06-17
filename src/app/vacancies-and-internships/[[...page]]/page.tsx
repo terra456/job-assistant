@@ -5,6 +5,7 @@ import { VacancySearchParams } from "@/lib/definitions";
 import VacancyItem from "@/ui/vacancy-item";
 import styles from "./page.module.scss";
 import VacancyFilters from "@/ui/vacancy-filters";
+import { Suspense } from "react";
 
 export default async function Vacancies({
   params,
@@ -33,7 +34,9 @@ export default async function Vacancies({
         другие
       </p>
       <div>
-        <VacancyFilters />
+        <Suspense>
+          <VacancyFilters />
+        </Suspense>
       </div>
       <div className={styles.cards}>
         {vacancies.map((el) => (
