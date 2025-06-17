@@ -2,6 +2,7 @@
 import HomeMenu from "@/ui/home-menu/home-menu";
 import styles from "./page.module.css";
 import NavBar from "@/ui/nav-bar/nav-bar";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -14,8 +15,9 @@ export default function Home() {
           работу
         </h2>
       </div>
-
-      <NavBar />
+      <Suspense>
+        <NavBar />
+      </Suspense>
 
       <div className={styles.cards_wrapper}>
         <HomeMenu />
