@@ -4,14 +4,19 @@ import { stack } from './lib/constants'
  
 export function middleware(request: NextRequest) {;
   let cookie = request.cookies.get('speciality');
-  console.log(cookie);
-  const currentSearchParams = request.url;
-  console.log('currentSearchParams', currentSearchParams);
   const searchParams = request.nextUrl.searchParams.get('speciality');
-  console.log('searchParams', searchParams);
 
+  if (!cookie && searchParams) {
+    if (searchParams && stack.has(searchParams)) {
+      const response = NextResponse.next();
+      response.cookies.set('speciality', searchParams);
   
-  if (cookie && !searchParams) {
+      cookie = response.cookies.get('speciality');
+      return response;
+    }
+  }
+  
+  if (cookie && searchParams === null) {
     const url = request.nextUrl.clone();
     url.searchParams.set('speciality', cookie.value);
     return NextResponse.redirect(url);
@@ -28,7 +33,6 @@ export function middleware(request: NextRequest) {;
       response.cookies.set('speciality', searchParams);
   
       cookie = response.cookies.get('speciality');
-      console.log(cookie);
     }
   }
  
