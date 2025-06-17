@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {;
     }
   }
   
-  if (cookie && !searchParams) {
+  if (cookie && searchParams === null) {
     const url = request.nextUrl.clone();
     url.searchParams.set('speciality', cookie.value);
     return NextResponse.redirect(url);
