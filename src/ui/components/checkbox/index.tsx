@@ -8,7 +8,12 @@ export default function ChecboxFilter({ name, defaultValue, label }: Props) {
   return (
     <>
       <label htmlFor={name}>{label}</label>
-      <input id={name} type="checkbox" name={name} checked={defaultValue} />
+      <input
+        id={name}
+        type="checkbox"
+        name={name}
+        defaultChecked={defaultValue}
+      />
     </>
   );
 }

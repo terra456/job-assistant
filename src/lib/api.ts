@@ -1,8 +1,12 @@
-import { BACKEND_ENDPOINT } from "./constants";
+import { BACKEND_ENDPOINT, backendSpeciality } from "./constants";
 import { LoginForm, Question, QuestionSearchParams, User, Vacancy, VacancySearchParams } from "./definitions";
 
 export async function getAllVacancies(params: VacancySearchParams): Promise<Vacancy[]> {
   console.log("getAllVacancies params", params);
+  if (params.speciality && params.speciality !== '') {
+    params.speciality = backendSpeciality.get(params.speciality);
+  }
+
   const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString()
   console.log(getParams);
   const response = await fetch(`${BACKEND_ENDPOINT}/vacancies?${getParams}`, {

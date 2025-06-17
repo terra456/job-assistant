@@ -11,7 +11,7 @@ export default async function Vacancies({
   searchParams,
 }: {
   params: Promise<{ page?: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   const { page } = await params;
   const search = await searchParams;
@@ -23,7 +23,7 @@ export default async function Vacancies({
   };
 
   const vacancies = await getAllVacancies(reqSerchParams);
-  const title = stack.get(reqSerchParams.speciality || "") || null;
+  const title = stack.get(search.speciality || "") || null;
   return (
     <>
       <h1>{title ? `Вакансии по ${title}` : "Все вакансии"}</h1>

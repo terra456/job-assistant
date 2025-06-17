@@ -3,7 +3,7 @@ import { source, stack } from "@/lib/constants";
 import SelectFilter from "../components/select";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useCallback } from "react";
-// import ChecboxFilter from "../components/checkbox";
+import ChecboxFilter from "../components/checkbox";
 
 export default function VacancyFilters() {
   const router = useRouter();
@@ -14,10 +14,9 @@ export default function VacancyFilters() {
   const currentSource = searchParams.get("source");
 
   const createQueryString = useCallback(
-    (name: string, value: string) => {
+    (name: string, value: string | boolean) => {
       const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-
+      params.set(name, value.toString());
       return params.toString();
     },
     [searchParams]
@@ -27,7 +26,13 @@ export default function VacancyFilters() {
     <form
       onChange={(e) => {
         const opt = e.target as HTMLInputElement | HTMLSelectElement;
-        router.push(pathname + "?" + createQueryString(opt.name, opt.value));
+        if (e.target instanceof HTMLInputElement && opt.type === "checkbox") {
+          router.push(
+            pathname + "?" + createQueryString(opt.name, opt.checked)
+          );
+        } else {
+          router.push(pathname + "?" + createQueryString(opt.name, opt.value));
+        }
       }}
     >
       <SelectFilter
@@ -47,12 +52,12 @@ export default function VacancyFilters() {
         title="город"
         options={[{ value: "string", label: "string" }]}
       />
-      {/* <ChecboxFilter name="remote" label="Удаленно" defaultValue={false} />
+      <ChecboxFilter name="remote" label="Удаленно" defaultValue={false} />
       <ChecboxFilter
         name="internship"
         label="Стажировка"
         defaultValue={false}
-      /> */}
+      />
     </form>
   );
 }
