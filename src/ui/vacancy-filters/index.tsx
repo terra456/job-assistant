@@ -3,6 +3,7 @@ import { source, stack } from "@/lib/constants";
 import SelectFilter from "../components/select";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useCallback } from "react";
+// import ChecboxFilter from "../components/checkbox";
 
 export default function VacancyFilters() {
   const router = useRouter();
@@ -33,12 +34,25 @@ export default function VacancyFilters() {
         name="speciality"
         options={Array.from(stack).map(([value, label]) => ({ value, label }))}
         defaultValue={currentSpeciality || undefined}
+        title="специализация"
       />
       <SelectFilter
         name="source"
+        title="источник"
         options={Array.from(source).map(([value, label]) => ({ value, label }))}
         defaultValue={currentSource || undefined}
       />
+      <SelectFilter
+        name="location"
+        title="город"
+        options={[{ value: "string", label: "string" }]}
+      />
+      {/* <ChecboxFilter name="remote" label="Удаленно" defaultValue={false} />
+      <ChecboxFilter
+        name="internship"
+        label="Стажировка"
+        defaultValue={false}
+      /> */}
     </form>
   );
 }

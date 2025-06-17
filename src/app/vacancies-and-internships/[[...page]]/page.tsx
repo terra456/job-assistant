@@ -1,6 +1,6 @@
 "use server";
 import { getAllVacancies } from "@/lib/api";
-import { vacancyPerPage } from "@/lib/constants";
+import { stack, vacancyPerPage } from "@/lib/constants";
 import { VacancySearchParams } from "@/lib/definitions";
 import VacancyItem from "@/ui/vacancy-item";
 import styles from "./page.module.scss";
@@ -21,17 +21,12 @@ export default async function Vacancies({
     skip: (Number(page) - 1) * vacancyPerPage || 0,
     ...search,
   };
-  console.log("reqSerchParams", search);
 
   const vacancies = await getAllVacancies(reqSerchParams);
-  console.log(vacancies);
+  const title = stack.get(reqSerchParams.speciality || "") || null;
   return (
     <>
-      <h1>
-        {reqSerchParams.speciality
-          ? `Вакансии по ${reqSerchParams.speciality}`
-          : "Все вакансии"}
-      </h1>
+      <h1>{title ? `Вакансии по ${title}` : "Все вакансии"}</h1>
       <p>
         На этой странице агрегируются junior-вакансии и стажировки из различных
         источников: hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие
