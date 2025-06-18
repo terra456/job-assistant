@@ -1,7 +1,7 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 249px;
+  grid-auto-rows: 280px;
   gap: 8px;
 }
 
@@ -32,6 +32,32 @@
   border-radius: 6px;
   color: var(--grey-700-00);
   text-decoration: none;
+
+  &:hover {
+    background: var(--gradient-button);
+
+    & .resume_foto {
+      padding-top: 5px;
+      transition: padding-top 300ms;
+    }
+  }
+}
+
+.resume_foto {
+  transition: padding-top 300ms;
+}
+
+.resume_head {
+  position: absolute;
+  max-width: 600px;
+  bottom: 20px;
+  font-family: var(--wix-text);
+  color: #232325;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+  text-align: left;
 }
 
 .aside {
@@ -44,4 +70,28 @@
   border-radius: 6px;
   color: var(--grey-100-ff);
   text-decoration: none;
+  font-family: var(--wix-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  &:hover {
+    background-image: url(/bg-stars.png);
+    background-position: center;
+  }
+}
+
+.aside_head {
+  position: absolute;
+  max-width: 200px;
+  bottom: 20px;
+}
+
+.aside_tag {
+  width: fit-content;
+  padding: 4px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 12px;
 }

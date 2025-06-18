@@ -1,20 +1,49 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--grey-100-f6);
+  border-radius: 6px;
+
+  &:nth-child(3) {
+    background: var(--gradient-secondary);
+  }
+  &:nth-child(5) {
+    background: var(--gradient-button);
+  }
+}
+
 .link,
-.link:hover,
 .link:visited,
 .link:focus {
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background-color: var(--grey-100-f6);
-  border-radius: 6px;
+  background-position: center;
   color: var(--grey-700-00);
   text-decoration: none;
+  background-position: 50% 50%;
+  background-size: 833px 438px;
+
+  &:hover {
+    background-image: url(/bg-category.svg);
+    animation-name: home-card;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+
+    & .desc {
+      animation-name: home-desc;
+      animation-duration: 400ms;
+      animation-fill-mode: forwards;
+    }
+  }
 }
 
 .head {
   position: absolute;
+  width: 200px;
   bottom: 20px;
   color: var(--grey-700-25);
   font-family: var(--wix-text);
@@ -28,9 +57,9 @@
 .desc {
   position: relative;
   padding: 0;
-  padding-top: 70px;
+  padding-top: 36px;
   margin: 0;
-  color: var(--grey-700-25);
+  color: transparent;
   font-family: var(--wix-text);
   font-size: 16px;
   font-weight: 500;
@@ -43,11 +72,34 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     display: block;
-    background-size: 20px 20px;
+    background-size: 26px 26px;
     background-position: top left;
     background-repeat: no-repeat;
+  }
+}
+
+@keyframes home-card {
+  from {
+    background-position: 50% 50%;
+  }
+  90% {
+    background-position: 43% 70%;
+  }
+  to {
+    background-position: 44% 68%;
+  }
+}
+
+@keyframes home-desc {
+  from {
+    top: 0px;
+    color: transparent;
+  }
+  to {
+    top: 10px;
+    color: var(--grey-700-25);
   }
 }

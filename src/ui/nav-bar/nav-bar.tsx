@@ -23,7 +23,7 @@ export default function NavBar() {
   );
 
   return (
-    <nav>
+    <nav className={styles.navigation}>
       <ul className={styles.list}>
         {Array.from(stack).map((el, i) => (
           <LinkSpec

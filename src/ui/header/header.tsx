@@ -13,12 +13,12 @@ export default async function Header() {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <ul className={styles.list}>
-          <li>
+          <li className={styles.item}>
             <Link href="/">
               <img src="/codereview.svg" alt="codereview" />
             </Link>
           </li>
-          <li className={styles.for_popup}>
+          <li className={styles.item}>
             <Suspense>
               <PopupMenu>
                 <NavBar />
@@ -26,7 +26,7 @@ export default async function Header() {
               </PopupMenu>
             </Suspense>
           </li>
-          <li>
+          <li className={styles.item}>
             <LoginLink />
           </li>
         </ul>

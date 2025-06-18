@@ -5,12 +5,12 @@ import Header from "@/ui/header/header";
 import Footer from "@/ui/footer/footer";
 
 const wixDisplay = Wix_Madefor_Display({
-  variable: "--font-wix-display",
+  variable: "--wix-display",
   subsets: ["cyrillic-ext"],
 });
 
 const wixText = Wix_Madefor_Text({
-  variable: "--font-wix-text",
+  variable: "--wix-text",
   subsets: ["cyrillic-ext"],
 });
 

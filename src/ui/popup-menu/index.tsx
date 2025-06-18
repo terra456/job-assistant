@@ -33,7 +33,10 @@ export default function PopupMenu({
 
   return (
     <>
-      <button onClick={toggleDropdown} className={styles.btn}>
+      <button
+        onClick={toggleDropdown}
+        className={classNames(styles.btn, isOpen ? styles.down : styles.up)}
+      >
         {spec}
       </button>
       <div className={classNames(styles.popup, isOpen ? styles.show : "")}>

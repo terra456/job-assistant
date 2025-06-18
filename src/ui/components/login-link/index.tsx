@@ -8,7 +8,7 @@ export default async function LoginLink() {
   return (
     <>
       {!session?.user ? (
-        <Link href="/auth/login">Войти</Link>
+        <LinkMenuImg text="Войти" imgClass={"profile"} href={"/auth/login"} />
       ) : (
         <LinkMenuImg
           text="Выйти"

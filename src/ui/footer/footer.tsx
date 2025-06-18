@@ -7,8 +7,24 @@ import LinkSocial from "../components/link-social";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+      {/* <div className={styles.row}>
+        <div className={styles.row_in}>
+          <span className={styles.row_info}>
+            Сайт был сделан джунами с нашего карьерного трека
+          </span>
+          <span className={styles.row_info}>
+            Этим сайтом пользуется больше 30.000 человек каждый месяц
+          </span>
+          <span className={styles.row_info}>
+            Сайт был сделан джунами с нашего карьерного трека
+          </span>
+          <span className={styles.row_info}>
+            Этим сайтом пользуется больше 30.000 человек каждый месяц
+          </span>
+        </div>
+      </div> */}
       <nav className={styles.wrapper}>
-        <ul>
+        <ul className={styles.list}>
           <li>
             <LinkFooter text={"Программа и тестирование"} href={""} />
           </li>
@@ -25,7 +41,7 @@ export default function Footer() {
             <LinkFooter text={"Блог"} href={""} />
           </li>
         </ul>
-        <ul>
+        <ul className={styles.list}>
           <li>
             <LinkFooter text={"Вакансии"} href={""} />
           </li>
@@ -39,9 +55,10 @@ export default function Footer() {
             <LinkFooter text={"Вопросы и ответы"} href={""} />
           </li>
         </ul>
-        <aside className={styles.aside}>
-          На какую зарплату я могу претендовать?
-        </aside>
+        <Link className={styles.aside} href={""}>
+          <p>На какую зарплату я могу претендовать?</p>
+          <p className={styles.aside_grey}>Пройти тест</p>
+        </Link>
         <div className={styles.contacts}>
           <Link href="/">
             <img src="/codereview-grey.svg" alt="codereview" />

@@ -12,6 +12,11 @@
   position: relative;
   width: 482px;
   height: 56px;
+  padding: 17px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 18px;
   box-shadow: 0px 0px 12px 0px rgba(24, 44, 194, 0.05);
   backdrop-filter: blur(8px);
@@ -19,11 +24,12 @@
 }
 
 .list {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px;
 
   & > li {
