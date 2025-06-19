@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import HomeMenu from "@/ui/home-menu/home-menu";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import NavBar from "@/ui/nav-bar/nav-bar";
 import { Suspense } from "react";
 

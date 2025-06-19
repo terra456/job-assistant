@@ -15,7 +15,13 @@ export default async function Header() {
         <ul className={styles.list}>
           <li className={styles.item}>
             <Link href="/">
-              <img src="/codereview.svg" alt="codereview" />
+              <picture>
+                <source
+                  media="(max-width: 590px)"
+                  srcSet="codereview_small.svg"
+                />
+                <img src="/codereview.svg" alt="codereview" />
+              </picture>
             </Link>
           </li>
           <li className={styles.item}>

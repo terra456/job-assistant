@@ -56,12 +56,12 @@ export default function Footer() {
           </li>
         </ul>
         <Link className={styles.aside} href={""}>
-          <p>На какую зарплату я могу претендовать?</p>
+          <p>На какую зарплату я&nbsp;могу претендовать?</p>
           <p className={styles.aside_grey}>Пройти тест</p>
         </Link>
         <div className={styles.contacts}>
-          <Link href="/">
-            <img src="/codereview-grey.svg" alt="codereview" />
+          <Link className={styles.logo} href="/">
+            &lt;codereview / &gt;
           </Link>
           <a className={styles.phone} href="tel:+74991108276">
             +7 (499) 110-82-76

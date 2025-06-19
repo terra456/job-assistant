@@ -1,0 +1,85 @@
+.page {
+  font-family: var(--font-wix-display);
+}
+
+.main {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  line-height: 10px;
+
+  @media screen and (max-width: 1399px) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  @media screen and (max-width: 820px) {
+    padding-right: 30px;
+    padding-left: 30px;
+
+    & > nav > ul {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (max-width: 590px) {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 8.5px;
+    line-height: 9px;
+  }
+}
+
+.promo {
+  max-width: 436px;
+  margin: 68px auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @media screen and (max-width: 590px) {
+    margin: 64px 33px 50px 33px;
+  }
+}
+
+.cards_wrapper {
+  max-width: 1020px;
+  margin-top: 20px;
+
+  @media screen and (max-width: 1399px) {
+    width: 100%;
+  }
+}
+
+.head1 {
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -1px;
+  text-align: center;
+
+  @media screen and (max-width: 590px) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+
+.head2 {
+  color: rgb(65, 66, 70);
+  font-family: var(--wix-display);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+  text-align: center;
+
+  @media screen and (max-width: 590px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

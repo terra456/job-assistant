@@ -4,6 +4,10 @@
   left: calc((482px - 584px) / 2);
   display: none;
   opacity: 0;
+
+  @media screen and (max-width: 590px) {
+    left: calc((100% - 350px) / 2);
+  }
 }
 
 .popup_fon {
@@ -14,6 +18,19 @@
   box-shadow: 0px 1px 12px 2px rgba(36, 36, 36, 0.07);
   background: rgb(255, 255, 255);
   font-size: 8px;
+
+  @media screen and (max-width: 590px) {
+    width: 350px;
+    height: 381px;
+
+    & > nav {
+      justify-content: flex-start;
+
+      & > ul {
+        justify-content: flex-start;
+      }
+    }
+  }
 }
 
 .show {
@@ -68,6 +85,11 @@
   letter-spacing: -0.5px;
   text-align: left;
 
+  @media screen and (max-width: 590px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -80,6 +102,9 @@
     background-size: 18px 18px;
     background-position: left;
     background-repeat: no-repeat;
+    @media screen and (max-width: 590px) {
+      top: 1px;
+    }
   }
 }
 

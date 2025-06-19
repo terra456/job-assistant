@@ -133,6 +133,11 @@ li {
   margin: 0 auto;
   max-width: 1022px;
 }
+@media screen and (max-width: 1399px) {
+  .main {
+    width: 100%;
+  }
+}
 
 .briefcase::before {
   background-image: url(/img/briefcase.svg);
@@ -172,6 +177,18 @@ li {
 
 .profile::before {
   background-image: url(/img/profile.svg);
+}
+
+@media screen and (max-width: 590px) {
+  .profile {
+    display: block;
+    width: 26px;
+    overflow: hidden;
+  }
+
+  .profile::before {
+    background-size: 18px 18px;
+  }
 }
 
 .menu::before {
