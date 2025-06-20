@@ -1,4 +1,5 @@
 import { getQuestion } from "@/lib/api";
+import "@/app/default.min.css";
 
 export default async function Page({
   params,
@@ -16,8 +17,10 @@ export default async function Page({
           {question.freq}
           {question.stack}
         </p>
-        <h1>{question.question}</h1>
-        <p>{question.answer}</p>
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: question.question }}
+        ></div>
       </main>
     </div>
   );
