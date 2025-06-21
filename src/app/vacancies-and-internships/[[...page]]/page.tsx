@@ -5,10 +5,8 @@ import { VacancySearchParams } from "@/lib/definitions";
 import VacancyItem from "@/ui/vacancy-item";
 import styles from "./page.module.scss";
 import VacancyFilters from "@/ui/vacancy-filters";
-import { Suspense } from "react";
 import Pagination from "@/ui/components/pagination";
 import Tags from "@/ui/components/tags";
-import LinkBtn from "@/ui/components/link-btn";
 import LinkBtnSecond from "@/ui/components/link-btn-second";
 import SophiAdvertismentGradient from "@/ui/sophy-advertisment-gradient";
 
@@ -22,7 +20,10 @@ export default async function Vacancies({
   const { page } = await params;
   console.log("page", page);
   const pageNubber = page ? Number(page[0].replace("page-", "")) : 1;
-  const search = await searchParams;
+  const rawSearch = await searchParams;
+  const search = Object.fromEntries(
+    Object.entries(rawSearch).filter(([, value]) => value !== undefined)
+  ) as { [key: string]: string };
 
   const reqSerchParams: VacancySearchParams = {
     limit: vacancyPerPage,

@@ -60,8 +60,8 @@ export default function VacancyFilters() {
         defaultInputValue={currentSpeciality}
         options={stackOptions}
         components={{ IndicatorSeparator }}
-        onChange={(option) => {
-          if (option) {
+        onChange={(option: any) => {
+          if (option?.value) {
             const newPathname = pathname.replace(/page-\d+/g, "");
             router.push(
               newPathname + "?" + createQueryString("speciality", option.value)
@@ -75,8 +75,8 @@ export default function VacancyFilters() {
         defaultInputValue={currentSource}
         options={sourceOptions}
         components={{ IndicatorSeparator }}
-        onChange={(option) => {
-          if (option) {
+        onChange={(option: any) => {
+          if (option.value) {
             const newPathname = pathname.replace(/page-\d+/g, "");
             router.push(
               newPathname + "?" + createQueryString("source", option.value)
@@ -89,7 +89,7 @@ export default function VacancyFilters() {
         styles={customStyles}
         components={{ IndicatorSeparator }}
         options={[{ value: "string", label: "string" }]}
-        onChange={(option) => {
+        onChange={(option: any) => {
           if (option) {
             router.push(
               pathname + "?" + createQueryString("city", option.value)

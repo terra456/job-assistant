@@ -9,7 +9,7 @@ export default async function Pagination({
   currentPage = 1,
   soursePage,
 }: {
-  search: {
+  search?: {
     [key: string]: string;
   };
   countPerPage: number;

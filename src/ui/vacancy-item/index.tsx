@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import styles from "./style.module.scss";
 import { Vacancy } from "@/lib/definitions";
