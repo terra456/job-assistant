@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.page {
+  padding: 9px 15px;
+  border-radius: 10px;
+  color: rgb(35, 35, 37);
+  text-decoration: none;
+  font-family: var(--wix-text);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    background: rgb(246, 246, 246);
+  }
+
+  &.active {
+    background: var(--gradient-secondary);
+  }
+}

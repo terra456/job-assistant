@@ -1,3 +1,5 @@
+import style from "./style.module.scss";
+
 type Props = {
   name: string;
   label: string;
@@ -7,13 +9,17 @@ type Props = {
 export default function ChecboxFilter({ name, defaultValue, label }: Props) {
   return (
     <>
-      <label htmlFor={name}>{label}</label>
-      <input
-        id={name}
-        type="checkbox"
-        name={name}
-        defaultChecked={defaultValue}
-      />
+      <label className={style.label}>
+        {label}
+        <input
+          className={style.checkbox}
+          id={name}
+          type="checkbox"
+          name={name}
+          defaultChecked={defaultValue}
+        />
+        <span className={style.switch}></span>
+      </label>
     </>
   );
 }

@@ -1,4 +1,4 @@
-export const BACKEND_ENDPOINT = "http://jobs.yourcodereview.com:8005";
+export const BACKEND_ENDPOINT = "http://jobs.yourcodereview.com:8006";
 
 export const vacancyPerPage = 8;
 
@@ -10,6 +10,15 @@ export const stack = new Map([
   ["qa", "QA"],
   ["c", "C#"],
 ]);
+
+export const stackOptions = [
+  { value: "python", label: "Python"},
+  { value: "java", label: "Java"},
+  { value: "javascript", label: "JavaScript"},
+  { value: "data-science", label: "Data Science"},
+  { value: "qa", label: "QA"},
+  { value: "c", label: "C#"},
+];
 
 //backend havn't speciality like frontend(QA C#)
 export const backendSpeciality = new Map([
@@ -26,3 +35,9 @@ export const source = new Map([
   ["hhru", "Hh.ru"],
   ["indeed", "Indeed"],
 ]);
+
+export const sourceOptions = [
+  { value: "linkedin", label: "LinkedIn"},
+  { value: "hhru", label: "Hh.ru"},
+  { value: "indeed", label: "Indeed"},
+];

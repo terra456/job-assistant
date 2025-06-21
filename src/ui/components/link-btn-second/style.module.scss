@@ -1,0 +1,25 @@
+.link {
+  padding: 12px 15px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: var(--gradient-button);
+  text-decoration: none;
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-text);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: left;
+  white-space: nowrap;
+
+  @media screen and (max-width: 590px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    background: var(--gradient-button-hover);
+  }
+}

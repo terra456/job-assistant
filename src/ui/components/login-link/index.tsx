@@ -1,6 +1,5 @@
 import LinkMenuImg from "../link-menu-img";
 import { auth } from "@/auth";
-import styles from "./style.module.scss";
 
 export default async function LoginLink() {
   const session = await auth();

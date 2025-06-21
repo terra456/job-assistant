@@ -1,36 +1,9 @@
 .popup {
   position: absolute;
-  top: 68px;
-  left: calc((482px - 584px) / 2);
+
   display: none;
   opacity: 0;
-
-  @media screen and (max-width: 590px) {
-    left: calc((100% - 350px) / 2);
-  }
-}
-
-.popup_fon {
-  width: 584px;
-  height: 270px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 1px 12px 2px rgba(36, 36, 36, 0.07);
-  background: rgb(255, 255, 255);
-  font-size: 8px;
-
-  @media screen and (max-width: 590px) {
-    width: 350px;
-    height: 381px;
-
-    & > nav {
-      justify-content: flex-start;
-
-      & > ul {
-        justify-content: flex-start;
-      }
-    }
-  }
+  z-index: 50;
 }
 
 .show {
@@ -72,40 +45,7 @@
   }
 
   position: relative;
-  padding: 0px;
-  padding-left: 24px;
   padding-right: 21px;
-  box-sizing: border-box;
-  color: var(--grey-700-00);
-  text-decoration: none;
-  font-family: var(--wix-text);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
-  letter-spacing: -0.5px;
-  text-align: left;
-
-  @media screen and (max-width: 590px) {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 18px;
-    height: 18px;
-    display: block;
-    background-image: url(/img/menu.svg);
-    background-size: 18px 18px;
-    background-position: left;
-    background-repeat: no-repeat;
-    @media screen and (max-width: 590px) {
-      top: 1px;
-    }
-  }
 }
 
 .down::after,
@@ -121,4 +61,10 @@
   background-size: 16px 16px;
   background-position: top left;
   background-repeat: no-repeat;
+  transition: 0.3s;
+}
+
+.up::after {
+  transform: rotateX(180deg);
+  transition: 0.3s;
 }

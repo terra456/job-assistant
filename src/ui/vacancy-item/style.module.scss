@@ -1,14 +1,40 @@
 .card {
-  position: relative;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 204px;
+  padding: 15px;
   border-radius: 8px;
   background: rgb(246, 246, 246);
+  text-decoration: none;
+
+  @media screen and (max-width: 590px) {
+    height: 211px;
+  }
+
+  &:hover .head {
+    color: #0560c9;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+
+  @media screen and (max-width: 590px) {
+    flex-direction: column;
+  }
+}
+
+.header {
+  width: 100%;
 }
 
 .head {
+  width: 100%;
+  padding-bottom: 10px;
   color: rgb(35, 35, 37);
   font-family: var(--wix-display);
   font-size: 22px;
@@ -16,19 +42,32 @@
   line-height: 26px;
   letter-spacing: -0.5px;
   text-align: left;
+
+  @media screen and (max-width: 590px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 .info {
   margin-bottom: auto;
+  align-content: stretch;
   display: flex;
   flex-direction: row;
-  color: rgb(35, 35, 37);
-  font-family: var(--wix-display);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  text-align: left;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.company {
+  max-width: 70%;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 4px;
+  width: 100%;
 }
 
 .name {
@@ -52,9 +91,6 @@
 }
 
 .date {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
   align-self: flex-end;
   color: rgb(134, 136, 142);
   font-family: var(--wix-display);
@@ -63,4 +99,8 @@
   line-height: 20px;
   letter-spacing: -0.5px;
   text-align: left;
+
+  @media screen and (max-width: 590px) {
+    align-self: flex-start;
+  }
 }

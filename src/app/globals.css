@@ -130,12 +130,28 @@ li {
 }
 
 .main {
+  width: 100%;
   margin: 0 auto;
-  max-width: 1022px;
+  padding: 80px 190px 20px 190px;
+  max-width: calc(1022px + 190px * 2);
 }
+
 @media screen and (max-width: 1399px) {
   .main {
-    width: 100%;
+    padding: 80px 90px 20px 90px;
+    max-width: calc(1022px + 90px * 2);
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .main {
+    padding: 60px 30px 20px 30px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .main {
+    padding: 35px 15px 20px 15px;
   }
 }
 
