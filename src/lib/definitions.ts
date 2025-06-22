@@ -40,7 +40,7 @@ export interface Question {
   question: string,
   position: string,
   freq: number,
-  answer: string,
+  answer: string | null,
   tags: string
 }
 

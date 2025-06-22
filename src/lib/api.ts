@@ -1,6 +1,6 @@
 import { BACKEND_ENDPOINT, backendSpeciality } from "./constants";
 import { AllResponse, LoginForm, Question, QuestionSearchParams, User, Vacancy, VacancySearchParams } from "./definitions";
-import { vacancies } from "./mock";
+import { vacancies, questions } from "./mock";
 
 export async function getAllVacancies(params: VacancySearchParams): Promise<AllResponse<Vacancy>> {
   if (params.speciality && params.speciality !== '') {
@@ -34,17 +34,18 @@ export async function getVacancie(id: number): Promise<Vacancy> {
   return json;
 }
 
-export async function getAllQuestions(params: QuestionSearchParams): Promise<Question[]> {
+export async function getAllQuestions(params: QuestionSearchParams): Promise<AllResponse<Question>> {
   const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString();
-  console.log(getParams);
-  const response = await fetch(`${BACKEND_ENDPOINT}/questions?${getParams}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
+  // console.log(getParams);
+  // const response = await fetch(`${BACKEND_ENDPOINT}/questions?${getParams}`, {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
     
-  });
-  const json = await response.json();
+  // });
+  // const json = await response.json();
+  const json = await questions;
   return json;
 }
 

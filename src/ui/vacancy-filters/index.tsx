@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { sourceOptions, stackOptions } from "@/lib/constants";
+import { sourceOptions, specialityOptions } from "@/lib/constants";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useCallback } from "react";
 import ChecboxFilter from "../components/checkbox";
@@ -55,10 +55,10 @@ export default function VacancyFilters() {
       }}
     >
       <Select
-        instanceId="spec"
+        instanceId="speciality"
         styles={customStyles}
         defaultInputValue={currentSpeciality}
-        options={stackOptions}
+        options={specialityOptions}
         components={{ IndicatorSeparator }}
         onChange={(option: any) => {
           if (option?.value) {

@@ -5,6 +5,8 @@ export const vacancyPerPage = {
   desktop: 7,
 };
 
+export const questionPerPage = 7;
+
 export const stack = new Map([
   ["python", "Python"],
   ["java", "Java"],
@@ -14,7 +16,7 @@ export const stack = new Map([
   ["c", "C#"],
 ]);
 
-export const stackOptions = [
+export const specialityOptions = [
   { value: "python", label: "Python"},
   { value: "java", label: "Java"},
   { value: "javascript", label: "JavaScript"},
@@ -22,6 +24,7 @@ export const stackOptions = [
   { value: "qa", label: "QA"},
   { value: "c", label: "C#"},
 ];
+
 
 //backend havn't speciality like frontend(QA C#)
 export const backendSpeciality = new Map([
@@ -32,6 +35,19 @@ export const backendSpeciality = new Map([
   ["qa", "ML"],
   ["c", "Go"],
 ]);
+
+export const stackOptions = [
+  { value: "python", label: "Python"},
+  { value: "java", label: "Java"},
+  { value: "js", label: "JavaScript"},
+  { value: "datascience", label: "Data Science"},
+  { value: "go", label: "Go"},
+  { value: "ml", label: "ML"},
+];
+
+export const positionOptions = [
+  { value: "", label: "unknown"},
+];
 
 export const source = new Map([
   ["linkedin", "LinkedIn"],
