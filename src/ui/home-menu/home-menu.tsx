@@ -26,10 +26,10 @@ export default function HomeMenu() {
         />
         <h2 className={styles.resume_head}>{menuRoutes[8].desc}</h2>
       </Link>
-      <aside className={styles.aside}>
+      <Link className={styles.aside} href={"/vacancies-and-internships/add"}>
         <p className={styles.aside_tag}>Бесплатно</p>
         <h3 className={styles.aside_head}>Разместить вакансию</h3>
-      </aside>
+      </Link>
     </div>
   );
 }

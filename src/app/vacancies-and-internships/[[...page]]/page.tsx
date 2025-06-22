@@ -64,29 +64,25 @@ export default async function Vacancies({
           <VacancyItem key={el.id} vacancie={el} />
         ))}
       </div>
-      <div className={styles.pagination}>
-        <Pagination
-          search={search}
-          countPerPage={vacancyPerPage[deviceType]}
-          totalCount={vacancies.total}
-          currentPage={pageNubber}
-          soursePage="vacancies-and-internships"
-        />
-      </div>
-      <div className={styles.tags}>
-        <Tags
-          str={[
-            "стажировка без опыта",
-            "вакансии джуниор",
-            "как откликнуться на вакансию",
-            "примеры вакансий junior",
-            "стажировки по Java",
-            "Junior Java Developer",
-            "Вакансии Java без опыта",
-            "Java Spring Boot вакансии",
-          ]}
-        />
-      </div>
+      <Pagination
+        search={search}
+        countPerPage={vacancyPerPage[deviceType]}
+        totalCount={vacancies.total}
+        currentPage={pageNubber}
+        soursePage="vacancies-and-internships"
+      />
+      <Tags
+        str={[
+          "стажировка без опыта",
+          "вакансии джуниор",
+          "как откликнуться на вакансию",
+          "примеры вакансий junior",
+          "стажировки по Java",
+          "Junior Java Developer",
+          "Вакансии Java без опыта",
+          "Java Spring Boot вакансии",
+        ]}
+      />
     </>
   );
 }

@@ -12,7 +12,7 @@ export default function SophiAdvertismentLine({ text }: { text: string }) {
           width={49}
           height={49}
         />
-        <div>
+        <div className={styles.text}>
           <h2 className={styles.head}>{text}</h2>
           <p className={styles.tag}>Попробовать бесплатно</p>
         </div>

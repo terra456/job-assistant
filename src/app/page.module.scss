@@ -48,6 +48,7 @@
 }
 
 .head2 {
+  margin-top: -20px;
   color: rgb(65, 66, 70);
   font-family: var(--wix-display);
   font-size: 22px;
@@ -57,6 +58,7 @@
   text-align: center;
 
   @media screen and (max-width: 590px) {
+    margin-top: -10px;
     font-size: 18px;
     line-height: 22px;
   }

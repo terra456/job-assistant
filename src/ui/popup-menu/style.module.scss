@@ -45,21 +45,21 @@
   }
 
   position: relative;
-  padding-right: 21px;
+  padding-right: 25px;
 }
 
 .down::after,
 .up::after {
   content: "";
   position: absolute;
-  top: 3px;
+  top: 4px;
   right: 0px;
   width: 16px;
   height: 16px;
   display: block;
-  background-image: url(/img/arrow-down.svg);
-  background-size: 16px 16px;
-  background-position: top left;
+  background-image: url(/img/arrow-up.svg);
+  background-size: 10px 10px;
+  background-position: center;
   background-repeat: no-repeat;
   transition: 0.3s;
 }

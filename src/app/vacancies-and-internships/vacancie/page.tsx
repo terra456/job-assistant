@@ -21,9 +21,9 @@ export default async function Page() {
     <div className={style.wrapper}>
       <div className={style.vacancie}>
         <div className={style.about}>
-          <span className={style.date}>
-            {dateToString(vacancie.date_publication)}
-          </span>
+          <p className={style.date}>
+            Опубликовано {dateToString(vacancie.date_publication)}
+          </p>
           <h1 className={style.head}>{vacancie.title}</h1>
           <div className={style.info}>
             {vacancie.remote ? (
