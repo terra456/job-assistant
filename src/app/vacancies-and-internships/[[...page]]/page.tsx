@@ -39,10 +39,10 @@ export default async function Vacancies({
   const title = stack.get(search.speciality || "") || null;
   return (
     <>
-      <h1 className={styles.head}>
+      <h1 className="head1">
         {title ? `Вакансии по ${title}` : "Все вакансии"}
       </h1>
-      <p className={styles.desc}>
+      <p className="head_desc">
         На этой странице агрегируются junior-вакансии и стажировки из различных
         источников: hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие
         другие

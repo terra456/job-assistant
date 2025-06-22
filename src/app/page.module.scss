@@ -32,6 +32,10 @@
   @media screen and (max-width: 590px) {
     margin: 30px 33px 50px 33px;
   }
+
+  & > * {
+    text-align: center;
+  }
 }
 
 .cards_wrapper {
@@ -40,21 +44,6 @@
 
   @media screen and (max-width: 1399px) {
     width: 100%;
-  }
-}
-
-.head1 {
-  color: rgb(35, 35, 37);
-  font-family: var(--wix-display);
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 52px;
-  letter-spacing: -1px;
-  text-align: center;
-
-  @media screen and (max-width: 590px) {
-    font-size: 26px;
-    line-height: 30px;
   }
 }
 

@@ -21,15 +21,16 @@ export async function getAllVacancies(params: VacancySearchParams): Promise<AllR
 }
 
 export async function getVacancie(id: number): Promise<Vacancy> {
-  const response = await fetch(`${BACKEND_ENDPOINT}/vacancies/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
+  // const response = await fetch(`${BACKEND_ENDPOINT}/vacancies/${id}`, {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
     
-  });
-  const json = await response.json();
-  console.log(id, response);
+  // });
+  // const json = await response.json();
+  const vacancie = await vacancies;
+  const json = vacancie.items[2];
   return json;
 }
 

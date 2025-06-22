@@ -10,7 +10,7 @@ export default function Home() {
       <div className={styles.main}>
         <div className={styles.promo}>
           <img src="/sophi-main.png" alt="Sophi photo" width={97} height={99} />
-          <h1 className={styles.head1}>Твой Ассистент по&nbsp;поиску работы</h1>
+          <h1 className="head1">Твой Ассистент по&nbsp;поиску работы</h1>
           <h2 className={styles.head2}>
             Я собрала для тебя все в одном месте, чтобы ты смог быстро найти
             работу
