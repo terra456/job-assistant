@@ -64,6 +64,15 @@
       rgba(197, 241, 208, 0.4) 100%
     ),
     rgb(255, 255, 255);
+  --gradient-secondary-90:
+    linear-gradient(
+      90deg,
+      rgba(244, 184, 184, 0.4),
+      rgba(234, 214, 181, 0.4) 22.596%,
+      rgba(227, 234, 179, 0.4) 44.712%,
+      rgba(197, 241, 208, 0.4) 100%
+    ),
+    rgb(255, 255, 255);
   --gradient-tertiary: linear-gradient(
     90deg,
     rgb(226, 83, 119),

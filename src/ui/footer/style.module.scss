@@ -9,37 +9,26 @@
   background-size: cover;
   background-position: center;
 }
+.marquee_wrapper {
+  padding: 11px 0;
+  background: var(--gradient-secondary);
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
 
-// @keyframes ticker {
-//   0% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(-50%);
-//   }
-// }
-
-// .row {
-//   background: #ffe43b;
-//   color: #000;
-//   font-family: system-ui;
-//   font-size: 24px;
-//   width: 100vw;
-//   overflow: hidden;
-// }
-
-// .row_in {
-//   display: flex;
-//   width: fit-content;
-//   animation: ticker 10s linear infinite;
-//   -webkit-transform-style: preserve-3d; /* Фикс возможного глюка с морганием в Сафари */
-// }
-
-// .row_info {
-//   padding: 0.5em 0.75em;
-//   white-space: nowrap;
-//   -webkit-backface-visibility: hidden; /* Фикс возможного глюка с морганием в Сафари */
-// }
+.marquee_info {
+  width: fit-content;
+  padding: 0 8px 0 26px;
+  background-image: url(/img/duck.svg);
+  background-size: 18px 18px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
 
 .wrapper {
   width: 1400px;

@@ -3,25 +3,27 @@ import LinkFooter from "../components/link-footer";
 import styles from "./style.module.scss";
 import LinkSocial from "../components/link-social";
 
+import Marquee from "react-fast-marquee";
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      {/* <div className={styles.row}>
-        <div className={styles.row_in}>
-          <span className={styles.row_info}>
+      <div className={styles.marquee_wrapper}>
+        <Marquee>
+          <span className={styles.marquee_info}>
             Сайт был сделан джунами с нашего карьерного трека
           </span>
-          <span className={styles.row_info}>
+          <span className={styles.marquee_info}>
             Этим сайтом пользуется больше 30.000 человек каждый месяц
           </span>
-          <span className={styles.row_info}>
+          <span className={styles.marquee_info}>
             Сайт был сделан джунами с нашего карьерного трека
           </span>
-          <span className={styles.row_info}>
+          <span className={styles.marquee_info}>
             Этим сайтом пользуется больше 30.000 человек каждый месяц
           </span>
-        </div>
-      </div> */}
+        </Marquee>
+      </div>
       <nav className={styles.wrapper}>
         <ul className={styles.list}>
           <li>
