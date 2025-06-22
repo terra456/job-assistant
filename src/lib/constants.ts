@@ -1,6 +1,9 @@
 export const BACKEND_ENDPOINT = "http://jobs.yourcodereview.com:8006";
 
-export const vacancyPerPage = 8;
+export const vacancyPerPage = {
+  mobile: 4,
+  desktop: 7,
+};
 
 export const stack = new Map([
   ["python", "Python"],

@@ -28,3 +28,18 @@
     background: var(--gradient-secondary);
   }
 }
+
+.page:nth-child(n + 6):not(:last-child) {
+  display: none;
+}
+
+.page:nth-child(5):not(:last-child) {
+  visibility: hidden;
+  font-size: 0;
+
+  &::before {
+    content: "...";
+    visibility: visible;
+    font-size: 18;
+  }
+}

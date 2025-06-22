@@ -9,6 +9,8 @@ import Pagination from "@/ui/components/pagination";
 import Tags from "@/ui/components/tags";
 import LinkBtnSecond from "@/ui/components/link-btn-second";
 import SophiAdvertismentGradient from "@/ui/sophy-advertisment-gradient";
+import { userAgent } from "next/server";
+import { headers } from "next/headers";
 
 export default async function Vacancies({
   params,
@@ -18,7 +20,9 @@ export default async function Vacancies({
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   const { page } = await params;
-  console.log("page", page);
+  const { device } = userAgent({ headers: await headers() });
+  const deviceType = device?.type === "mobile" ? "mobile" : "desktop";
+  console.log("device", deviceType);
   const pageNubber = page ? Number(page[0].replace("page-", "")) : 1;
   const rawSearch = await searchParams;
   const search = Object.fromEntries(
@@ -26,8 +30,8 @@ export default async function Vacancies({
   ) as { [key: string]: string };
 
   const reqSerchParams: VacancySearchParams = {
-    limit: vacancyPerPage,
-    skip: (pageNubber - 1) * vacancyPerPage || 0,
+    limit: vacancyPerPage[deviceType],
+    skip: (pageNubber - 1) * vacancyPerPage[deviceType] || 0,
     ...search,
   };
 
@@ -63,7 +67,7 @@ export default async function Vacancies({
       <div className={styles.pagination}>
         <Pagination
           search={search}
-          countPerPage={vacancyPerPage}
+          countPerPage={vacancyPerPage[deviceType]}
           totalCount={vacancies.total}
           currentPage={pageNubber}
           soursePage="vacancies-and-internships"

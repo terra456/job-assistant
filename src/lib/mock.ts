@@ -122,7 +122,7 @@ export const vacancies: AllResponse<Vacancy> = {
           "date_publication": "2025-05-09T03:23:17.759479"
       }
   ],
-  "total": 17,
+  "total": 170,
   "skip": 0,
   "limit": 7
 }
