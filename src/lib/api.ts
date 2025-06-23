@@ -1,40 +1,38 @@
 import { BACKEND_ENDPOINT, backendSpeciality } from "./constants";
 import { AllResponse, LoginForm, Question, QuestionSearchParams, User, Vacancy, VacancySearchParams } from "./definitions";
-import { vacancies, questions } from "./mock";
+import { cache } from 'react';
 
-export async function getAllVacancies(params: VacancySearchParams): Promise<AllResponse<Vacancy>> {
+export const getAllVacancies = cache(async(params: VacancySearchParams): Promise<AllResponse<Vacancy>> => {
   if (params.speciality && params.speciality !== '') {
     params.speciality = backendSpeciality.get(params.speciality);
   }
 
-  // const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString()
+  const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString()
 
-  // const response = await fetch(`${BACKEND_ENDPOINT}/vacancies?${getParams}`, {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // });
-  // const json = await response.json();
-  const json = await vacancies;
+  const response = await fetch(`${BACKEND_ENDPOINT}/vacancies?${getParams}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const json = await response.json();
   return json;
-}
+});
 
-export async function getVacancie(id: number): Promise<Vacancy> {
-  // const response = await fetch(`${BACKEND_ENDPOINT}/vacancies/${id}`, {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
+export const getVacancie = cache(async(id: number): Promise<Vacancy> => {
+  console.log('get vacancie');
+  const response = await fetch(`${BACKEND_ENDPOINT}/vacancies/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
     
-  // });
-  // const json = await response.json();
-  const vacancie = await vacancies;
-  const json = vacancie.items[2];
+  });
+  const json = await response.json();
   return json;
-}
+})
 
-export async function getAllQuestions(params: QuestionSearchParams): Promise<AllResponse<Question>> {
+export const  getAllQuestions = cache(async(params: QuestionSearchParams): Promise<AllResponse<Question>> => {
   const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString();
   console.log(getParams);
   const response = await fetch(`${BACKEND_ENDPOINT}/questions?${getParams}`, {
@@ -47,9 +45,9 @@ export async function getAllQuestions(params: QuestionSearchParams): Promise<All
   const json = await response.json();
   console.log(json);
   return json;
-}
+});
 
-export async function getQuestion(id: number): Promise<Question> {
+export const getQuestion = cache(async(id: number): Promise<Question> => {
   const response = await fetch(`${BACKEND_ENDPOINT}/questions/${id}`, {
     method: "GET",
     headers: {
@@ -60,7 +58,7 @@ export async function getQuestion(id: number): Promise<Question> {
   const json = await response.json();
   console.log(id, response);
   return json;
-}
+});
 
 export async function loginUserGetToken(data: LoginForm): Promise<User | null> {
   const response = await fetch(`${BACKEND_ENDPOINT}/auth/token`, {

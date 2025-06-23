@@ -12,13 +12,45 @@ import SophiAdvertismentGradient from "@/ui/sophy-advertisment-gradient";
 import { userAgent } from "next/server";
 import { headers } from "next/headers";
 
-export default async function Vacancies({
-  params,
-  searchParams,
-}: {
+import type { Metadata } from "next";
+
+const keyWords = [
+  "стажировка без опыта",
+  "вакансии джуниор",
+  "как откликнуться на вакансию",
+  "примеры вакансий junior",
+  "стажировки по Java",
+  "Junior Java Developer",
+  "Вакансии Java без опыта",
+  "Java Spring Boot вакансии",
+];
+
+type Props = {
   params: Promise<{ page?: string }>;
   searchParams: Promise<{ [key: string]: string | undefined }>;
-}) {
+};
+
+export async function generateMetadata({
+  searchParams,
+}: Props): Promise<Metadata> {
+  const rawSearch = await searchParams;
+  const currentSpeciality = rawSearch["speciality"] || "";
+  const currentRemote = rawSearch["remote"] === "true";
+  const currentInternship = rawSearch["internship"] === "true";
+  const speciality = stack.get(currentSpeciality) || null;
+  const internship = currentInternship
+    ? "Стажировки"
+    : "Ваканссии и стажировки";
+
+  const title = `${speciality ? `${internship} по ${speciality}` : `все ${internship}`}${currentRemote ? " удаленнo" : ""}`;
+  return {
+    title: title,
+    description: `Вакансии и стажировки по направлениям ${Array.from(stack.values()).join(", ")}`,
+    keywords: keyWords.join(", "),
+  };
+}
+
+export default async function Vacancies({ params, searchParams }: Props) {
   const { page } = await params;
   const { device } = userAgent({ headers: await headers() });
   const deviceType = device?.type === "mobile" ? "mobile" : "desktop";
@@ -71,18 +103,7 @@ export default async function Vacancies({
         currentPage={pageNubber}
         soursePage="vacancies-and-internships"
       />
-      <Tags
-        str={[
-          "стажировка без опыта",
-          "вакансии джуниор",
-          "как откликнуться на вакансию",
-          "примеры вакансий junior",
-          "стажировки по Java",
-          "Junior Java Developer",
-          "Вакансии Java без опыта",
-          "Java Spring Boot вакансии",
-        ]}
-      />
+      <Tags str={keyWords} />
     </>
   );
 }

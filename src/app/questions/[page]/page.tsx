@@ -8,15 +8,38 @@ import styles from "./page.module.scss";
 import QuestionFilters from "@/ui/question-filters";
 import Tags from "@/ui/components/tags";
 import SophiAdvertismentLine from "@/ui/sophy-advertisment-line";
+import { Metadata } from "next";
 
-export default async function Page({
-  params,
-  searchParams,
-}: {
+const keyWords = [
+  "вопросы на собеседовании junior разработчик",
+  "технические вопросы фронтенд   ",
+  "вопросы по JavaScript на собеседовании ",
+  "вопросы по SQL для собеседования",
+  "вопросы в Яндекс собеседование ",
+  "частые вопросы на собеседовании.",
+];
+
+type Props = {
   params: Promise<{ page?: string }>;
   searchParams: Promise<{ [key: string]: string | undefined }>;
-}) {
-  const serchParams: QuestionSearchParams = {};
+};
+
+export async function generateMetadata({
+  searchParams,
+}: Props): Promise<Metadata> {
+  const search = await searchParams;
+  return {
+    title: `${search.stack ? `Вопросы по ${search.stack} ` : "Все вопросы "}
+    на собеседовании`,
+    description: `Раздел помогает пользователям подготовиться к техническим и
+      поведенческим интервью. Здесь собраны реальные вопросы, которые задают
+      работодатели, а также готовые ответы и пояснения. Вопросы сгруппированы
+      по стеку и уровню сложности`,
+    keywords: keyWords.join(", "),
+  };
+}
+
+export default async function Page({ params, searchParams }: Props) {
   const { page } = await params;
   const pageNumber = page ? Number(page.replace("page-", "")) : 1;
   const search = await searchParams;
@@ -30,7 +53,7 @@ export default async function Page({
   return (
     <>
       <h1 className="head1">
-        {serchParams.stack ? `Вопросы по ${serchParams.stack}` : "Все вопросы "}
+        {search.stack ? `Вопросы по ${search.stack} ` : "Все вопросы "}
         на собеседовании
       </h1>
       <p className="head_desc">
@@ -68,16 +91,7 @@ export default async function Page({
           soursePage="questions"
         />
       </div>
-      <Tags
-        str={[
-          "вопросы на собеседовании junior разработчик",
-          "технические вопросы фронтенд   ",
-          "вопросы по JavaScript на собеседовании ",
-          "вопросы по SQL для собеседования",
-          "вопросы в Яндекс собеседование ",
-          "частые вопросы на собеседовании.",
-        ]}
-      />
+      <Tags str={keyWords} />
     </>
   );
 }

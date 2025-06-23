@@ -6,14 +6,46 @@ import QuestionItem from "@/ui/question-item";
 import styles from "./page.module.scss";
 import SophiAdvertismentYelow from "@/ui/sophy-advertisment-yelow";
 import Tags from "@/ui/components/tags";
+import { Metadata } from "next";
 
-export default async function Page({
-  params,
-  searchParams,
-}: {
+const keyWords = [
+  "как отвечать на вопрос",
+  "пример собеседования",
+  "фреймворки на собеседовании",
+  "типичные вопросы junior",
+  "интервью вопросы и ответы",
+];
+
+type Props = {
   params: Promise<{ page: string; number: string }>;
   searchParams: Promise<{ [key: string]: string | undefined }>;
-}) {
+};
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const { page, number } = await params;
+  const questionNumber = number ? Number(number) : 1;
+  const pageNumber = page ? Number(page.replace("page-", "")) : 1;
+  const search = await searchParams;
+  console.log("search", search);
+  const reqSerchParams: QuestionSearchParams = {
+    limit: questionPerPage,
+    skip: (pageNumber - 1) * questionPerPage || 0,
+    ...search,
+  };
+  console.log(reqSerchParams);
+  const { items } = await getAllQuestions(reqSerchParams);
+  const question = items[questionNumber - 1];
+  return {
+    title: question.question.slice(0, 50),
+    description: `Ответ на вопрос ${question.question}`,
+    keywords: keyWords,
+  };
+}
+
+export default async function Page({ params, searchParams }: Props) {
   const { page, number } = await params;
   const questionNumber = number ? Number(number) : 1;
   const pageNumber = page ? Number(page.replace("page-", "")) : 1;
@@ -75,15 +107,7 @@ export default async function Page({
           queryString={search}
         />
       </div>
-      <Tags
-        str={[
-          "как отвечать на вопрос",
-          "пример собеседования",
-          "фреймворки на собеседовании",
-          "типичные вопросы junior",
-          "интервью вопросы и ответы",
-        ]}
-      />
+      <Tags str={keyWords} />
     </div>
   );
 }

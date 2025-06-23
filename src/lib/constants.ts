@@ -1,4 +1,4 @@
-export const BACKEND_ENDPOINT = "http://jobs.yourcodereview.com:8005";
+export const BACKEND_ENDPOINT = "http://jobs.yourcodereview.com:8006";
 
 export const vacancyPerPage = {
   mobile: 4,

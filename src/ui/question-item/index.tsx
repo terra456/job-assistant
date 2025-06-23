@@ -24,9 +24,7 @@ export default function QuestionItem({
       className={styles.item}
     >
       {isNext && <p className={styles.next}>Следующий вопрос</p>}
-      <h2 className={styles.item_head}>
-        {question.answer ? question.answer : question.question}
-      </h2>
+      <h2 className={styles.item_head}>{question.question}</h2>
       <p className={styles.item_info}>
         <span className={styles.item_span}>{question.stack}</span>
         <span className={styles.item_span}>{question.freq} упоминаний</span>

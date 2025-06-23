@@ -9,11 +9,36 @@ import Tags from "@/ui/components/tags";
 import Link from "next/link";
 import transliterate from "transliterate-cyrillic-text-to-latin-url";
 
-export default async function Page({
-  params,
-}: {
+import type { Metadata } from "next";
+
+const keyWords = [
+  "вакансии джуниор",
+  "как откликнуться на вакансию",
+  "примеры вакансий junior",
+  "Вакансии Java",
+  "стажировки по Java",
+];
+
+type Props = {
   params: Promise<{ id: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+
+  const vacancie = await getVacancie(Number(id));
+
+  return {
+    title: vacancie.title,
+    openGraph: {
+      images: [vacancie.image],
+    },
+    description: `Вакансия в ${vacancie.company_name} - ${vacancie.title.slice(0, 150)} + "...Read More`,
+    keywords: keyWords,
+  };
+}
+
+export default async function Page({ params }: Props) {
   const { id } = await params;
   const vacancie = await getVacancie(Number(id));
   const sameVacancies = await getAllVacancies({
@@ -43,7 +68,10 @@ export default async function Page({
             )}
           </div>
         </div>
-        <div className={style.vacancie_data}>{vacancie.description}</div>
+        <div
+          className={style.vacancie_data}
+          dangerouslySetInnerHTML={{ __html: vacancie.description }}
+        ></div>
       </div>
       <div className={style.right_block}>
         <div className={style.company}>
@@ -78,15 +106,7 @@ export default async function Page({
         </div>
       </div>
       <div className={style.tags}>
-        <Tags
-          str={[
-            "вакансии джуниор",
-            "как откликнуться на вакансию",
-            "примеры вакансий junior",
-            "Вакансии Java",
-            "стажировки по Java",
-          ]}
-        />
+        <Tags str={keyWords} />
       </div>
     </div>
   );

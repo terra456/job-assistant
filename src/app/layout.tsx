@@ -14,9 +14,20 @@ const wixText = Wix_Madefor_Text({
   subsets: ["cyrillic-ext"],
 });
 
+const keyWords = [
+  "стажировка без опыта",
+  "вакансии джуниор",
+  "как откликнуться на вакансию",
+  "примеры вакансий junior",
+  "пример собеседования",
+  "фреймворки на собеседовании",
+  "интервью вопросы и ответы",
+];
+
 export const metadata: Metadata = {
   title: "Ассистент по поиску работы",
   description: "все в одном месте, чтобы быстро найти работу",
+  keywords: keyWords,
 };
 
 export default function RootLayout({
