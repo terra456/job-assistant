@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import classNames from "classnames";
 
 export default function PopupMenu({
-  name,
   children,
+  name,
 }: {
-  name: string;
   children: React.ReactNode;
+  name: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,7 +34,7 @@ export default function PopupMenu({
         onClick={toggleDropdown}
         className={classNames(styles.btn, isOpen ? styles.down : styles.up)}
       >
-        {name}
+        {name ? name : "Специализация"}
       </button>
       <div className={classNames(styles.popup, isOpen ? styles.show : "")}>
         <div className={styles.popup_fon}>{children}</div>

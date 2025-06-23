@@ -3,8 +3,11 @@ import HomeMenu from "@/ui/home-menu/home-menu";
 import styles from "./page.module.scss";
 import NavBar from "@/ui/nav-bar/nav-bar";
 import { Suspense } from "react";
+import { cookies } from "next/headers";
 
-export default function Home() {
+export default async function Home() {
+  const cookieStore = await cookies();
+  const speciality = cookieStore.get("speciality")?.value || "";
   return (
     <div className="only_home">
       <div className={styles.main}>
@@ -17,7 +20,7 @@ export default function Home() {
           </h2>
         </div>
         <Suspense>
-          <NavBar />
+          <NavBar speciality={speciality} />
         </Suspense>
 
         <div className={styles.cards_wrapper}>

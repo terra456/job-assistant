@@ -1,37 +1,34 @@
 "use client";
-
-import { usePathname, useSearchParams } from "next/navigation";
 import styles from "./style.module.scss";
-import LinkSpec from "../components/link-spec";
 import { stack } from "@/lib/constants";
-import { useCallback } from "react";
+import classNames from "classnames";
+import { useRouter } from "next/navigation";
 
-export default function NavBar() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const currentSpeciality = searchParams.get("speciality");
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams]
-  );
+export default function NavBar({ speciality }: { speciality: string }) {
+  const router = useRouter();
+  const handleClick = (option: string) => {
+    document.cookie =
+      `speciality=${option}; expires=` +
+      new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toUTCString() +
+      "; path=/";
+    router.refresh();
+  };
 
   return (
     <nav className={styles.navigation}>
       <ul className={styles.list}>
-        {Array.from(stack).map((el, i) => (
-          <LinkSpec
-            key={el[0] + i}
-            isAactive={currentSpeciality === el[0]}
-            href={`./${pathname + "?" + createQueryString("speciality", el[0])}`}
-            text={el[1]}
-          />
+        {Array.from(stack).map(([elKey, value], i) => (
+          <li key={elKey + i}>
+            <button
+              className={classNames(
+                styles.myLink,
+                elKey === speciality && styles.active
+              )}
+              onClick={() => handleClick(elKey)}
+            >
+              {value}
+            </button>
+          </li>
         ))}
       </ul>
     </nav>

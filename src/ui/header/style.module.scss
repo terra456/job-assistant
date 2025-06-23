@@ -32,8 +32,8 @@
   }
 }
 
-.item:nth-child(2) {
-  & button {
+.spec_btn {
+  & > button {
     box-sizing: border-box;
     color: var(--grey-700-00);
     text-decoration: none;
