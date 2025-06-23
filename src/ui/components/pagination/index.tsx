@@ -2,6 +2,8 @@ import classNames from "classnames";
 import styles from "./style.module.scss";
 import Link from "next/link";
 import { convertSerchIntoUrl } from "@/lib/utils";
+import { auth } from "@/auth";
+import LinkBtn from "../link-btn";
 
 export default async function Pagination({
   search,
@@ -18,6 +20,7 @@ export default async function Pagination({
   currentPage?: number;
   soursePage: string;
 }) {
+  const session = await auth();
   const length = Math.ceil(totalCount / countPerPage);
   return (
     <div className={styles.pagination}>
@@ -34,6 +37,18 @@ export default async function Pagination({
           {index + 1}
         </Link>
       ))}
+      {!session && (
+        <div className={styles.hover}>
+          <p className={styles.head}>
+            Получите доступ к 1200 вакансиям и стажировкам
+          </p>
+          <p className={styles.desc}>
+            Сервис можно использовать бесплатно, без ограничений.Чтобы получить
+            полный доступ, вам необходимо зарегистрироваться.{" "}
+          </p>
+          <LinkBtn text={"Зарегистрироваться"} href={"/auth/login"} />
+        </div>
+      )}
     </div>
   );
 }

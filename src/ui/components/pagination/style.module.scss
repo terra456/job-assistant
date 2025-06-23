@@ -1,4 +1,5 @@
 .pagination {
+  position: relative;
   padding-bottom: 60px;
   display: flex;
   flex-direction: row;
@@ -52,4 +53,41 @@
     visibility: visible;
     font-size: 18;
   }
+}
+
+.hover {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 130px 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.54),
+    rgb(255, 255, 255) 54.517%
+  );
+}
+
+.head {
+  padding-bottom: 10px;
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.desc {
+  padding-bottom: 25px;
+  color: rgb(134, 136, 142);
+  font-family: var(--wix-display);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: center;
 }
