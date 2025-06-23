@@ -8,3 +8,7 @@ export function dateToString(date: Date | string): string {
     day: "2-digit",
   });
 }
+
+export function convertSerchIntoUrl(serch: { [key: string]: string | undefined }) {
+  return Object.entries(serch).map(([key, value]) => `${key}=${value}`).join('=');
+}

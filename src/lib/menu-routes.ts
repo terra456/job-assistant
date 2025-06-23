@@ -28,7 +28,7 @@ const menuRoutes = [
   },
   {
     text: "Собеседования",
-    href: "questions",
+    href: "questions/page-1",
     imgClass: "microphone",
     desc: "Реальные вопросы с интервью, сгруппированные по стеку и уровню сложности — с пояснениями и примерами ответов",
   },

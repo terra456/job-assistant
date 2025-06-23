@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 import { Vacancy } from "@/lib/definitions";
 import transliterate from "transliterate-cyrillic-text-to-latin-url";
 import TagImg from "../components/tag-img";
-import { dateToString } from "@/lib/date-converce";
+import { dateToString } from "@/lib/utils";
 import CompanyInfo from "../company-info";
 
 export default function VacancyItem({ vacancie }: { vacancie: Vacancy }) {

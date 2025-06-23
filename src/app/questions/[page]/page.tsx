@@ -6,7 +6,6 @@ import Pagination from "@/ui/components/pagination";
 import QuestionItem from "@/ui/question-item";
 import styles from "./page.module.scss";
 import QuestionFilters from "@/ui/question-filters";
-import Link from "next/link";
 import Tags from "@/ui/components/tags";
 import SophiAdvertismentLine from "@/ui/sophy-advertisment-line";
 
@@ -14,16 +13,14 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: Promise<{ page?: string[] }>;
+  params: Promise<{ page?: string }>;
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   const serchParams: QuestionSearchParams = {};
   const { page } = await params;
-  const pageNumber = page ? Number(page[0].replace("page-", "")) : 1;
-  const rawSearch = await searchParams;
-  const search = Object.fromEntries(
-    Object.entries(rawSearch).filter(([, value]) => value !== undefined)
-  ) as { [key: string]: string };
+  const pageNumber = page ? Number(page.replace("page-", "")) : 1;
+  const search = await searchParams;
+  console.log("search", search);
   const reqSerchParams: QuestionSearchParams = {
     limit: questionPerPage,
     skip: (pageNumber - 1) * questionPerPage || 0,
@@ -51,17 +48,14 @@ export default async function Page({
             }
           />
         </li>
-        {questions.items.map((el) => (
+        {questions.items.map((el, i) => (
           <li key={el.id}>
-            <Link href={`/questions/question/${el.id}`} className={styles.item}>
-              <h2 className={styles.item_head}>
-                {el.answer ? el.answer : el.question}
-              </h2>
-              <p className={styles.item_info}>
-                <span className={styles.item_span}>{el.stack}</span>
-                <span className={styles.item_span}>{el.freq} упоминаний</span>
-              </p>
-            </Link>
+            <QuestionItem
+              question={el}
+              page={pageNumber}
+              questionNumber={i + 1}
+              queryString={search}
+            />
           </li>
         ))}
       </ul>

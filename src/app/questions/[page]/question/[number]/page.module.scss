@@ -1,0 +1,136 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 60px;
+
+  @media screen and (max-width: 960) {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.left {
+  width: calc(100% - 360px);
+  flex-shrink: 1;
+  @media screen and (max-width: 960) {
+    width: 100%;
+  }
+}
+
+.right {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (max-width: 960) {
+    width: 100%;
+  }
+}
+
+.info {
+  padding-bottom: 10px;
+  color: #636469;
+  font-family: var(--wix-display);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: left;
+  @media screen and (max-width: 590) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &_span {
+    position: relative;
+    padding-right: 4px;
+
+    &:not(:first-child) {
+      padding-left: 8px;
+    }
+
+    &:not(:first-child)::before {
+      position: absolute;
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      left: 0;
+      top: 8px;
+      background-color: #acaeb2;
+    }
+  }
+}
+
+.question_data {
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  @media screen and (max-width: 590px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  & pre > code {
+    margin-bottom: 20px;
+    border: 1px solid rgb(240, 241, 241);
+    border-radius: 12px;
+    font-family:
+      Menlo,
+      Consolas,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace,
+      serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  & p {
+    padding-bottom: 15px;
+
+    & > code {
+      background-color: var(--grey-200);
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    padding: 15px 0 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  & ul {
+    padding-left: 30px;
+    padding-bottom: 5px;
+    list-style-type: disc;
+  }
+
+  & li {
+    padding-bottom: 8px;
+  }
+}

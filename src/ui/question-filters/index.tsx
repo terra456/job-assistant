@@ -39,7 +39,7 @@ export default function QuestionFilters() {
         components={{ IndicatorSeparator }}
         onChange={(option: any) => {
           if (option?.value) {
-            const newPathname = pathname.replace(/page-\d+/g, "");
+            const newPathname = pathname.replace(/page-\d+/g, "page-1");
             router.push(
               newPathname + "?" + createQueryString("speciality", option.value)
             );
@@ -54,7 +54,7 @@ export default function QuestionFilters() {
         components={{ IndicatorSeparator }}
         onChange={(option: any) => {
           if (option?.value) {
-            const newPathname = pathname.replace(/page-\d+/g, "");
+            const newPathname = pathname.replace(/page-\d+/g, "page-1");
             router.push(
               newPathname + "?" + createQueryString("stack", option.value)
             );
@@ -69,7 +69,7 @@ export default function QuestionFilters() {
         components={{ IndicatorSeparator }}
         onChange={(option: any) => {
           if (option?.value) {
-            const newPathname = pathname.replace(/page-\d+/g, "");
+            const newPathname = pathname.replace(/page-\d+/g, "page-1");
             router.push(
               newPathname + "?" + createQueryString("position", option.value)
             );

@@ -36,16 +36,16 @@ export async function getVacancie(id: number): Promise<Vacancy> {
 
 export async function getAllQuestions(params: QuestionSearchParams): Promise<AllResponse<Question>> {
   const getParams = new URLSearchParams(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)]))).toString();
-  // console.log(getParams);
-  // const response = await fetch(`${BACKEND_ENDPOINT}/questions?${getParams}`, {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
+  console.log(getParams);
+  const response = await fetch(`${BACKEND_ENDPOINT}/questions?${getParams}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
     
-  // });
-  // const json = await response.json();
-  const json = await questions;
+  });
+  const json = await response.json();
+  console.log(json);
   return json;
 }
 

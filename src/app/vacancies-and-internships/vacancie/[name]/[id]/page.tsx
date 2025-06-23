@@ -2,7 +2,7 @@ import { getAllVacancies, getVacancie } from "@/lib/api";
 import style from "./page.module.scss";
 import TagImg from "@/ui/components/tag-img";
 import CompanyInfo from "@/ui/company-info";
-import { dateToString } from "@/lib/date-converce";
+import { dateToString } from "@/lib/utils";
 import LinkBtnSecond from "@/ui/components/link-btn-second";
 import SophiAdvertismentYelow from "@/ui/sophy-advertisment-yelow";
 import Tags from "@/ui/components/tags";

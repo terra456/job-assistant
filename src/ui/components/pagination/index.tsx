@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import styles from "./style.module.scss";
 import Link from "next/link";
+import { convertSerchIntoUrl } from "@/lib/utils";
 
 export default async function Pagination({
   search,
@@ -10,7 +11,7 @@ export default async function Pagination({
   soursePage,
 }: {
   search?: {
-    [key: string]: string;
+    [key: string]: string | undefined;
   };
   countPerPage: number;
   totalCount: number;
@@ -28,7 +29,7 @@ export default async function Pagination({
               ? classNames(styles.page, styles.active)
               : styles.page
           }
-          href={`/${soursePage}/page-${index + 1}${search ? `?${new URLSearchParams(search).toString()}` : ""}`}
+          href={`/${soursePage}/page-${index + 1}${search ? `?${convertSerchIntoUrl(search)}` : ""}`}
         >
           {index + 1}
         </Link>

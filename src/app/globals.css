@@ -181,6 +181,24 @@ li {
   }
 }
 
+.head2 {
+  padding-bottom: 30px;
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+@media screen and (max-width: 590px) {
+  .head2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
 .head_desc {
   padding-bottom: 50px;
   color: rgb(65, 66, 70);
