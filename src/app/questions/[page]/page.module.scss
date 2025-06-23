@@ -1,0 +1,43 @@
+.list {
+  padding: 25px 0 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.advertisment {
+  grid-row: 4/5;
+  & > a {
+    background-image: url(/bg_line_yelow.png);
+    background-position: center;
+    background-size: cover;
+
+    @media screen and (max-width: 590) {
+      height: 110px;
+    }
+
+    & > div {
+      @media screen and (max-width: 590) {
+        height: 100%;
+        justify-content: space-between;
+      }
+
+      & > div > p {
+        color: #8e521e;
+      }
+
+      & > img {
+        display: none;
+      }
+    }
+
+    & > div::after {
+      background-color: #8e521e;
+
+      @media screen and (max-width: 590) {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}

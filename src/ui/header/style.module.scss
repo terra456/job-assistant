@@ -6,24 +6,76 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 590px) {
+    padding: 10px 41px;
+  }
 }
 
 .nav {
   position: relative;
   width: 482px;
   height: 56px;
+  padding: 17px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 18px;
   box-shadow: 0px 0px 12px 0px rgba(24, 44, 194, 0.05);
   backdrop-filter: blur(8px);
   background: rgba(255, 255, 255, 0.92);
+
+  @media screen and (max-width: 590px) {
+    height: 48px;
+    width: 100%;
+  }
+}
+
+.item:nth-child(2) {
+  & button {
+    box-sizing: border-box;
+    color: var(--grey-700-00);
+    text-decoration: none;
+    font-family: var(--wix-text);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    text-align: left;
+    padding-left: 24px;
+
+    @media screen and (max-width: 590px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      display: block;
+      background-image: url(/img/menu.svg);
+      background-size: 18px 18px;
+      background-position: left;
+      background-repeat: no-repeat;
+      @media screen and (max-width: 590px) {
+        top: 1px;
+      }
+    }
+  }
 }
 
 .list {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px;
 
   & > li {

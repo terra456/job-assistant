@@ -1,6 +1,11 @@
-export const BACKEND_ENDPOINT = "http://jobs.yourcodereview.com:8005";
+export const BACKEND_ENDPOINT = "http://jobs.yourcodereview.com:8006";
 
-export const vacancyPerPage = 8;
+export const vacancyPerPage = {
+  mobile: 4,
+  desktop: 7,
+};
+
+export const questionPerPage = 7;
 
 export const stack = new Map([
   ["python", "Python"],
@@ -10,6 +15,16 @@ export const stack = new Map([
   ["qa", "QA"],
   ["c", "C#"],
 ]);
+
+export const specialityOptions = [
+  { value: "python", label: "Python"},
+  { value: "java", label: "Java"},
+  { value: "javascript", label: "JavaScript"},
+  { value: "data-science", label: "Data Science"},
+  { value: "qa", label: "QA"},
+  { value: "c", label: "C#"},
+];
+
 
 //backend havn't speciality like frontend(QA C#)
 export const backendSpeciality = new Map([
@@ -21,8 +36,27 @@ export const backendSpeciality = new Map([
   ["c", "Go"],
 ]);
 
+export const stackOptions = [
+  { value: "python", label: "Python"},
+  { value: "java", label: "Java"},
+  { value: "js", label: "JavaScript"},
+  { value: "datascience", label: "Data Science"},
+  { value: "go", label: "Go"},
+  { value: "ml", label: "ML"},
+];
+
+export const positionOptions = [
+  { value: "", label: "unknown"},
+];
+
 export const source = new Map([
   ["linkedin", "LinkedIn"],
   ["hhru", "Hh.ru"],
   ["indeed", "Indeed"],
 ]);
+
+export const sourceOptions = [
+  { value: "linkedin", label: "LinkedIn"},
+  { value: "hhru", label: "Hh.ru"},
+  { value: "indeed", label: "Indeed"},
+];

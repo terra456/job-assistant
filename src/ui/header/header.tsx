@@ -1,32 +1,29 @@
 "use server";
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import NavBar from "../nav-bar/nav-bar";
-import MainMenu from "../main-menu/main-menu";
 import styles from "./style.module.scss";
-import PopupMenu from "../popup-menu";
 import LoginLink from "../components/login-link";
-import { Suspense } from "react";
+import HeaderPopup from "../header-popup";
 
 export default async function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <ul className={styles.list}>
-          <li>
+          <li className={styles.item}>
             <Link href="/">
-              <img src="/codereview.svg" alt="codereview" />
+              <picture>
+                <source
+                  media="(max-width: 590px)"
+                  srcSet="codereview_small.svg"
+                />
+                <img src="/codereview.svg" alt="codereview" />
+              </picture>
             </Link>
           </li>
-          <li className={styles.for_popup}>
-            <Suspense>
-              <PopupMenu>
-                <NavBar />
-                <MainMenu />
-              </PopupMenu>
-            </Suspense>
+          <li className={styles.item}>
+            <HeaderPopup />
           </li>
-          <li>
+          <li className={styles.item}>
             <LoginLink />
           </li>
         </ul>

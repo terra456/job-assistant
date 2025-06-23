@@ -1,32 +1,41 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import styles from "./style.module.scss";
 import { Vacancy } from "@/lib/definitions";
 import transliterate from "transliterate-cyrillic-text-to-latin-url";
+import TagImg from "../components/tag-img";
+import { dateToString } from "@/lib/utils";
+import CompanyInfo from "../company-info";
 
 export default function VacancyItem({ vacancie }: { vacancie: Vacancy }) {
   return (
     <Link
       className={styles.card}
-      href={`./vacancies-and-internships/vacancie/${transliterate(vacancie.title)}/${vacancie.id}`}
+      href={`/vacancies-and-internships/vacancie/${transliterate(vacancie.title)}/${vacancie.id}`}
     >
-      <div>
-        <h2 className={styles.head}>{vacancie.title}</h2>
-        <div className={styles.info}>
-          <span>{vacancie.remote}</span>
-          <span>{vacancie.internship}</span>
-          <span>{vacancie.salary}</span>
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
+          <h2 className={styles.head}>{vacancie.title}</h2>
+          <div className={styles.info}>
+            {vacancie.remote ? (
+              <TagImg type="remote" />
+            ) : (
+              <TagImg type="office" />
+            )}
+            {vacancie.internship && <TagImg type="intern" />}
+            {vacancie.salary ? (
+              <TagImg type="salary" text={`${vacancie.salary} P`} />
+            ) : (
+              <TagImg type="salary" />
+            )}
+          </div>
         </div>
-        <img
-          src={vacancie.image}
-          alt={vacancie.company_name}
-          width={42}
-          height={42}
+        <CompanyInfo
+          image={vacancie.image}
+          company_name={vacancie.company_name}
+          location={vacancie.location}
         />
-        <p className={styles.name}>{vacancie.company_name}</p>
-        <p className={styles.locate}>{vacancie.location}</p>
         <span className={styles.date}>
-          {new Date(vacancie.date_publication).toDateString()}
+          {dateToString(vacancie.date_publication)}
         </span>
       </div>
     </Link>

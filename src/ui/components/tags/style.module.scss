@@ -1,0 +1,24 @@
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+
+  @media screen and (max-width: 590px) {
+    justify-content: flex-start;
+  }
+}
+
+.tag {
+  padding: 4px 8px 4px 8px;
+  border-radius: 6px;
+  background: rgb(246, 246, 246);
+  color: rgb(35, 35, 37);
+  font-family: var(--wix-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}

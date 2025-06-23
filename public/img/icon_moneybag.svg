@@ -1,0 +1,15 @@
+<svg width="18.000000" height="18.000000" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip34_1213">
+			<rect id="icon/moneybag" rx="0.000000" width="17.000000" height="17.000000" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="icon/moneybag" rx="0.000000" width="17.000000" height="17.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip34_1213)">
+		<path id="Vector" d="M10.87 2.25C11.17 2.25 11.46 2.36 11.67 2.57C11.88 2.79 12 3.07 12 3.37C12 4.07 11.72 4.73 11.23 5.23C10.73 5.72 10.07 6 9.37 6L8.62 6C7.92 6 7.26 5.72 6.76 5.23C6.27 4.73 6 4.07 6 3.37C6 3.07 6.11 2.79 6.32 2.57C6.54 2.36 6.82 2.25 7.12 2.25L10.87 2.25Z" stroke="#232325" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+		<path id="Vector" d="M3 12C3 10.4 3.63 8.88 4.75 7.75C5.88 6.63 7.4 6 9 6C10.59 6 12.11 6.63 13.24 7.75C14.36 8.88 15 10.4 15 12L15 12.75C15 13.54 14.68 14.3 14.12 14.87C13.55 15.43 12.79 15.75 12 15.75L6 15.75C5.2 15.75 4.44 15.43 3.87 14.87C3.31 14.3 3 13.54 3 12.75L3 12Z" stroke="#232325" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+	</g>
+</svg>

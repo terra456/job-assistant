@@ -1,18 +1,15 @@
 "use client";
 import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import classNames from "classnames";
-import { stack } from "@/lib/constants";
 
 export default function PopupMenu({
+  name,
   children,
-}: Readonly<{
+}: {
+  name: string;
   children: React.ReactNode;
-}>) {
-  const searchParams = useSearchParams();
-  const currentSpeciality = searchParams.get("speciality");
-  const spec = stack.get(currentSpeciality || "") || "Специализация";
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -33,8 +30,11 @@ export default function PopupMenu({
 
   return (
     <>
-      <button onClick={toggleDropdown} className={styles.btn}>
-        {spec}
+      <button
+        onClick={toggleDropdown}
+        className={classNames(styles.btn, isOpen ? styles.down : styles.up)}
+      >
+        {name}
       </button>
       <div className={classNames(styles.popup, isOpen ? styles.show : "")}>
         <div className={styles.popup_fon}>{children}</div>

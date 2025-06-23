@@ -1,8 +1,18 @@
 .wrapper {
+  padding-bottom: 80px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 249px;
+  grid-auto-rows: auto;
   gap: 8px;
+
+  @media screen and (max-width: 820px) {
+    padding-bottom: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 590px) {
+    gap: 5px;
+  }
 }
 
 .menu {
@@ -32,6 +42,53 @@
   border-radius: 6px;
   color: var(--grey-700-00);
   text-decoration: none;
+
+  @media screen and (max-width: 820px) {
+    grid-column: 1/3;
+    height: 121px;
+  }
+
+  @media screen and (max-width: 590px) {
+    padding: 15px;
+  }
+
+  &:hover {
+    background: var(--gradient-button);
+
+    & .resume_foto {
+      padding-top: 5px;
+      transition: padding-top 300ms;
+    }
+  }
+}
+
+.resume_foto {
+  transition: padding-top 300ms;
+}
+
+.resume_head {
+  position: absolute;
+  max-width: 600px;
+  bottom: 20px;
+  font-family: var(--wix-text);
+  color: #232325;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  @media screen and (max-width: 820px) {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: -0.5px;
+    text-align: left;
+  }
+
+  @media screen and (max-width: 590px) {
+    bottom: 15px;
+  }
 }
 
 .aside {
@@ -40,8 +97,64 @@
   height: 157px;
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--grey-600);
   border-radius: 6px;
   color: var(--grey-100-ff);
   text-decoration: none;
+
+  @media screen and (max-width: 820px) {
+    grid-column: 1/3;
+    height: 64px;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 590px) {
+    padding: 15px;
+  }
+
+  &:hover {
+    background-image: url(/bg-stars.png);
+    background-position: center;
+
+    @media screen and (max-width: 820px) {
+      background-size: cover;
+    }
+  }
+}
+
+.aside_head {
+  max-width: 200px;
+  font-family: var(--wix-text);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  @media screen and (max-width: 590px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.aside_tag {
+  width: fit-content;
+  padding: 4px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 12px;
+  font-family: var(--wix-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  @media screen and (max-width: 590px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }

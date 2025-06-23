@@ -1,21 +1,9 @@
 .popup {
   position: absolute;
-  top: 56px;
-  left: 0;
+
   display: none;
   opacity: 0;
-  transform: translateY(-20px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-.popup_fon {
-  width: 584px;
-  height: 270px;
-  border-radius: 12px;
-  box-shadow: 0px 1px 12px 2px rgba(36, 36, 36, 0.07);
-  background: rgb(255, 255, 255);
+  z-index: 50;
 }
 
 .show {
@@ -57,29 +45,26 @@
   }
 
   position: relative;
-  padding: 0px;
-  padding-left: 21px;
-  box-sizing: border-box;
-  color: var(--grey-700-00);
-  text-decoration: none;
-  font-family: var(--wix-text);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: -0.5px;
-  text-align: left;
+  padding-right: 25px;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 0;
-    width: 15px;
-    height: 15px;
-    display: block;
-    background-image: url(/img/menu.svg);
-    background-size: 15px 15px;
-    background-position: top left;
-    background-repeat: no-repeat;
-  }
+.down::after,
+.up::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 0px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-image: url(/img/arrow-up.svg);
+  background-size: 10px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+
+.up::after {
+  transform: rotateX(180deg);
+  transition: 0.3s;
 }

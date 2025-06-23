@@ -1,3 +1,10 @@
+export interface AllResponse<T> {
+  items: T[]
+  total: number,
+  skip: number,
+  limit: number
+}
+
 export interface Vacancy {
   id: number,
   active: boolean,
@@ -33,7 +40,7 @@ export interface Question {
   question: string,
   position: string,
   freq: number,
-  answer: string,
+  answer: string | null,
   tags: string
 }
 

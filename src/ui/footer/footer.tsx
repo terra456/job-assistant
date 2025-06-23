@@ -1,14 +1,31 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import LinkFooter from "../components/link-footer";
 import styles from "./style.module.scss";
 import LinkSocial from "../components/link-social";
 
+import Marquee from "react-fast-marquee";
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+      <div className={styles.marquee_wrapper}>
+        <Marquee>
+          <span className={styles.marquee_info}>
+            Сайт был сделан джунами с нашего карьерного трека
+          </span>
+          <span className={styles.marquee_info}>
+            Этим сайтом пользуется больше 30.000 человек каждый месяц
+          </span>
+          <span className={styles.marquee_info}>
+            Сайт был сделан джунами с нашего карьерного трека
+          </span>
+          <span className={styles.marquee_info}>
+            Этим сайтом пользуется больше 30.000 человек каждый месяц
+          </span>
+        </Marquee>
+      </div>
       <nav className={styles.wrapper}>
-        <ul>
+        <ul className={styles.list}>
           <li>
             <LinkFooter text={"Программа и тестирование"} href={""} />
           </li>
@@ -25,7 +42,7 @@ export default function Footer() {
             <LinkFooter text={"Блог"} href={""} />
           </li>
         </ul>
-        <ul>
+        <ul className={styles.list}>
           <li>
             <LinkFooter text={"Вакансии"} href={""} />
           </li>
@@ -39,12 +56,13 @@ export default function Footer() {
             <LinkFooter text={"Вопросы и ответы"} href={""} />
           </li>
         </ul>
-        <aside className={styles.aside}>
-          На какую зарплату я могу претендовать?
-        </aside>
+        <Link className={styles.aside} href={""}>
+          <p>На какую зарплату я&nbsp;могу претендовать?</p>
+          <p className={styles.aside_grey}>Пройти тест</p>
+        </Link>
         <div className={styles.contacts}>
-          <Link href="/">
-            <img src="/codereview-grey.svg" alt="codereview" />
+          <Link className={styles.logo} href="/">
+            &lt;codereview / &gt;
           </Link>
           <a className={styles.phone} href="tel:+74991108276">
             +7 (499) 110-82-76

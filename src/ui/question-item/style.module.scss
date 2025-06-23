@@ -1,0 +1,94 @@
+.item {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgb(246, 246, 246);
+  text-decoration: none;
+
+  &:hover .item_head {
+    color: #0560c9;
+  }
+
+  &_head {
+    color: rgb(0, 0, 0);
+    font-family: var(--wix-display);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    text-align: left;
+
+    @media screen and (max-width: 590) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &_info {
+    color: #636469;
+    font-family: var(--wix-display);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    text-align: left;
+    @media screen and (max-width: 590) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &_span {
+    position: relative;
+    padding-right: 4px;
+
+    &:not(:first-child) {
+      padding-left: 8px;
+    }
+
+    &:not(:first-child)::before {
+      position: absolute;
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      left: 0;
+      top: 8px;
+      background-color: #acaeb2;
+    }
+  }
+}
+
+.next {
+  position: relative;
+  margin-bottom: 30px;
+  color: rgb(99, 100, 105);
+  font-family: Wix Madefor Display;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  text-align: left;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 11px;
+    width: 11px;
+    right: 20px;
+    top: 3px;
+    mask-image: url(/img/icon.svg);
+    mask-size: 11px 11px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transform: rotate(45deg);
+    background: rgb(65, 66, 70);
+  }
+
+  @media screen and (max-width: 590) {
+    padding-bottom: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
